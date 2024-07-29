@@ -8,6 +8,9 @@ body {
     margin: 0;
 }
 
+
+
+
 .menu {
     background-color: white;
     padding: 20px;
@@ -17,23 +20,12 @@ body {
 }
 
 .levels {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+    background: linear-gradient(90deg, rgba(251,155,54,1) 0%,rgba(251,155,54,1) 50.4%,rgba(249,202,38,1) 100%);
+    border: 1px solid rgba(246,209,167,1);
 }
 
-.level {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: white;
-    transition: background-color 0.3s;
-}
+
 
 .level:hover {
-    background-color: #0056b3;
+    background-color: #b36500;
 }
