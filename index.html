@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"></script>
     <title>INDEX</title>
+    <link rel="stylesheet" href="styles.css">
+
     <style>
         body {
           background-image: url('Imagenes/Image.png');
@@ -13,7 +15,16 @@
     </style>
 </head>
 <body>
-
-
+  <div class="menu">
+    <h1>Seleccione un Nivel</h1>
+    <div class="levels">
+        <button class="level" onclick="selectLevel(1)">Nivel 1</button>
+        <button class="level" onclick="selectLevel(2)">Nivel 2</button>
+        <button class="level" onclick="selectLevel(3)">Nivel 3</button>
+        <button class="level" onclick="selectLevel(4)">Nivel 4</button>
+        <button class="level" onclick="selectLevel(5)">Nivel 5</button>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
