@@ -1,6 +1,7 @@
 body {
     background-image: url('../Imagenes/Image.png');
     background-repeat: no-repeat;
+    background-size: cover;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
