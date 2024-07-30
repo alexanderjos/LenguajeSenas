@@ -137,7 +137,7 @@
     object-fit: contain;
 }
 
-/Aqui se realiza la flechita para el menu/
+/*Aqui se realiza la flechita para el menu*/
 .menu-toggle {
     position: absolute;
     top: 20px;
@@ -182,7 +182,7 @@
     background-color: #f0f0f0;
 }
 
-/AQUI VA EL ENCABEZADO/
+/* /AQUI VA EL ENCABEZADO/ */
 
 body {
     font-family: Arial, sans-serif;
