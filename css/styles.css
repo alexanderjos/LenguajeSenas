@@ -97,7 +97,7 @@
 .pregunta {
     background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent red background for the question */
     color: white; /* White text color */
-    padding: 10px;
+    padding: 20px;
     border-radius: 15px;
 }
 
