@@ -1,57 +1,48 @@
-body {
-    background-image: url('../Imagenes/Image.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+html, body {
+    height: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.menu {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+header {
+    background-color: yellow;
+    padding: 10px; /* Ajusta el padding para obtener la altura deseada */
     text-align: center;
+    box-sizing: border-box; /* Incluye padding en el cálculo de altura */
 }
 
-.levels {
+.Juego {
+    flex: 1;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
-    margin-top: 20px;
-}
-
-.level {
-    width: 80px;
-    height: 80px;
-    border: none;
-    border-radius: 50%;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(to bottom right, #FFA500, #FF4500);
-    cursor: pointer;
-    transition: transform 0.3s;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
+    overflow: hidden; /* Asegura que la imagen no se desborde del contenedor */
+    position: relative; /* Necesario para posicionar los botones de manera absoluta */
 }
 
-.level:hover {
-    transform: scale(1.1);
-}
-
-.icon {
+.Juego img {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 20px;
-    height: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-circular {
+    position: absolute;
+    text-decoration: none;
+    width: 115px; /* Ajusta el tamaño del botón según sea necesario */
+    height: 115px; /* Ajusta el tamaño del botón según sea necesario */
+    background-color: red; /* Color de fondo del botón */
+    border: none;
+    border-radius: 50%; /* Hace que el botón sea circular */
+    cursor: pointer;
+    color: white; /* Color del texto dentro del botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px; /* Ajusta el tamaño del texto */
+    font-style: italic;
+    z-index: 10; /* Asegura que los botones estén por encima de la imagen */
 }
