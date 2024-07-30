@@ -15,7 +15,7 @@ function cargarPregunta(index) {
 
     // Actualiza la imagen de la seña
     const imagen = document.getElementById('miImagen');
-    imagen.src = objetoPregunta.respuesta; // Usa la variable directamente
+    imagen.src = objetoPregunta.senia; // Usa la variable directamente
 
     //arreglo para las alternativas
     opciones = [...objetoPregunta.distractores]
