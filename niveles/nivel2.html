@@ -11,6 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="/js/basedePreguntas.js"></script>
+    <script defer src="/js/index.js"></script>
     <title>Juego de Preguntas</title>
 </head>
 
@@ -37,37 +40,37 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center mb-4 pregunta">
-                    <h2>¿A que animal pertenece la siguiente seña?</h2>
+                    <h2 id="pregunta"></h2>
                     <br>
-                    <img src="" alt="">
+                    <img id="miImagen" src="" alt="Imagen">
                 </div>
-                <div class="col-2 mb-3 respuesta">
-                    <img src="../Imagenes/perro.gif" alt="Perro" class="img-fluid">
+                <div class="col-2 mb-3 respuesta" onclick="seleccionarOpcion(0)" >
+                    <img id="alternativa1" src=" " alt="alternativa 1" class="img-fluid" >
                 </div>
-                <div class="col-2 mb-3 respuesta">
-                    <img src="../Imagenes/caballo.gif" alt="Caballo" class="img-fluid">
+                <div class="col-2 mb-3 respuesta"onclick="seleccionarOpcion(1)">
+                    <img id="alternativa2" src="" alt="alternativa 2" class="img-fluid" >
                 </div>
-                <div class="col-2 mb-3 respuesta">
-                    <img src="../Imagenes/toro.gif" alt="Toro" class="img-fluid">
+                <div class="col-2 mb-3 respuesta"onclick="seleccionarOpcion(2)">
+                    <img id="alternativa3" src="" alt="alternativa 3" class="img-fluid" >
                 </div>
-                <div class="col-2 mb-3 respuesta">
-                    <img src="../Imagenes/mono.gif" alt="Mono" class="img-fluid">
+                <div class="col-2 mb-3 respuesta"onclick="seleccionarOpcion(3)">
+                    <img id="alternativa4" src="" alt="alternativa 4" class="img-fluid" >
                 </div>
                 
 
             </div>
             <div class="row justify-content-center">
-                <div class="col-2 mb-3 respuesta">
-                    <img src="../Imagenes/canguro.gif" alt="Canguro" class="img-fluid">
+                <div class="col-2 mb-3 respuesta"  onclick="seleccionarOpcion(4)">
+                    <img id="alternativa5" src="" alt="alternativa 5" class="img-fluid">
                 </div>
-                <div class="col-2 mb-3 respuesta">
-                    <img src="../Imagenes/conejo.gif" alt="Conejo" class="img-fluid">
+                <div class="col-2 mb-3 respuesta" onclick="seleccionarOpcion(5)">
+                    <img id="alternativa6" src="" alt="alternativa 6" class="img-fluid" >
                 </div>
-                <div class="col-2 mb-3 respuesta">
-                    <img src="../Imagenes/tigre.gif" alt="Tigre" class="img-fluid">
+                <div class="col-2 mb-3 respuesta" onclick="seleccionarOpcion(6)">
+                    <img id="alternativa7" src="" alt="alternativa 7" class="img-fluid" >
                 </div>
-                <div class="col-2 mb-3 respuesta">
-                    <img src="../Imagenes/ardilla.gif" alt="Ardilla" class="img-fluid">
+                <div class="col-2 mb-3 respuesta" onclick="seleccionarOpcion(7)">
+                    <img id="alternativa8" src="" alt="alternativa 8" class="img-fluid" >
                 </div>
                 
 
