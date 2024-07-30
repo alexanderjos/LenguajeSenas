@@ -41,7 +41,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-<<<<<<< HEAD
     background-image: url('../Imagenes/isla-01-svg.svg'); 
     background-size: 150%; 
     background-repeat: no-repeat; 
@@ -54,7 +53,6 @@
     font-size: 16px; 
     cursor: pointer; 
     position: relative; 
-
     background-image: url('../Imagenes/isla-01-svg.svg'); /* Reemplaza con la ruta de tu imagen */
     background-size: 100%; /* Ajusta el tamaño de la imagen al botón */
     background-repeat: no-repeat; /* No repite la imagen */
