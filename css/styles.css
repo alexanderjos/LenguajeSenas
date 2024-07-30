@@ -1,5 +1,13 @@
-html, body {
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -7,7 +15,7 @@ html, body {
 
 header {
     background-color: yellow;
-    padding: 10px; /* Ajusta el padding para obtener la altura deseada */
+    padding: 40px; /* Ajusta el padding para obtener la altura deseada */
     text-align: center;
     box-sizing: border-box; /* Incluye padding en el cálculo de altura */
 }
@@ -29,20 +37,40 @@ header {
     height: 100%;
 }
 
-.btn-circular {
+.button-container {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-circular {
     text-decoration: none;
     width: 115px; /* Ajusta el tamaño del botón según sea necesario */
     height: 115px; /* Ajusta el tamaño del botón según sea necesario */
     background-color: red; /* Color de fondo del botón */
     border: none;
     border-radius: 50%; /* Hace que el botón sea circular */
-    cursor: pointer;
     color: white; /* Color del texto dentro del botón */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px; /* Ajusta el tamaño del texto */
+    font-size: 60px; /* Ajusta el tamaño del texto */
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
     font-style: italic;
     z-index: 10; /* Asegura que los botones estén por encima de la imagen */
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Espacio entre el botón y las estrellas */
+}
+
+.stars i {
+    color: rgb(211, 211, 211);/* Color de las estrellas */
+    font-size: 24px; /* Tamaño de las estrellas */
+    margin: 0 2px; /* Espacio entre las estrellas */
 }
