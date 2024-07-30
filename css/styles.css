@@ -97,3 +97,66 @@
     font-size: 2.5em;
 }
 
+/*Aqui se realiza la flechita para el menu*/
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.encabezado {
+    background-color: yellow;
+    text-align: center;
+    padding: 20px;
+}
+
+.Juego {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('Imagenes/fondo.png') no-repeat center center;
+    background-size: cover;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 24px;
+}
+
+.menu {
+    position: absolute;
+    top: 60px;
+    left: -300px;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu ul li:hover {
+    background-color: #f0f0f0;
+}
