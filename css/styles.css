@@ -99,26 +99,39 @@
     font-size: 2.5em;
 }
 
+.pregunta {
+    background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent red background for the question */
+    color: white; /* White text color */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+/* Estilo para las tarjetas de respuesta */
+.respuesta {
+    height: 150px; /* Altura fija para el contenedor */
+    width: 150px; /* Anchura fija para el contenedor */
+    border: 2px solid black; /* Borde negro para el contenedor */
+    border-radius: 10px; /* Bordes redondeados para el contenedor */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra la imagen verticalmente */
+    margin: 15px;
+    background-color: #f0f0f0; /* Color de fondo del contenedor */
+}
+
+/* Asegura que las imágenes se ajusten al contenedor sin estirarse */
+.respuesta img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    max-height: 100%; /* Asegura que la imagen no exceda la altura del contenedor */
+    object-fit: contain; /* Mantiene la relación de aspecto y ajusta la imagen dentro del contenedor */
+}
+
+
+
+
+
 /*Aqui se realiza la flechita para el menu*/
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-.encabezado {
-    background-color: yellow;
-    text-align: center;
-    padding: 20px;
-}
-
-.Juego {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url('Imagenes/fondo.png') no-repeat center center;
-    background-size: cover;
-}
-
 .menu-toggle {
     position: absolute;
     top: 20px;
