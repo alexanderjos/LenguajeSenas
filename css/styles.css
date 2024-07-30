@@ -74,12 +74,13 @@
 .nivel2 {
     padding: 0;
     margin: 0;
-    overflow-x: hidden; /* Elimina la barra de desplazamiento horizontal */
-    overflow-y: hidden; /* Elimina la barra de desplazamiento vertical */
     min-height: 100vh; /* Asegura que cubra toda la altura de la pantalla */
     background-image: url(../Imagenes/nivel2.jpg);
     background-size: 100% 100%; /* Ajusta la imagen para que cubra todo el área */
     background-repeat: no-repeat; /* Asegura que la imagen no se repita */
+}
+#miImagen{
+    height: 330px;
 }
 .encabezadoN2{
     color:white;
@@ -99,6 +100,7 @@
     padding: 10px;
     border-radius: 15px;
 }
+
 
 /* Estilo para las tarjetas de respuesta */
 .respuesta {
