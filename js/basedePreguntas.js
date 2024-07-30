@@ -3,7 +3,7 @@
 let baseDePreguntas = [
     {
         pregunta: "¿A qué animal pertenece la siguiente seña?",
-        senia: "",
+        senia: "/Imagenes/seña1.gif",
         respuesta: "/Imagenes/caballo.gif",
         distractores: [
             "/Imagenes/conejo.gif",
