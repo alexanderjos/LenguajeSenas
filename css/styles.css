@@ -6,14 +6,14 @@
     box-sizing: border-box;
 }
 
-body {
+.inicio {
     min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-header {
+.encabezado {
     background-color: yellow;
     padding: 40px; /* Ajusta el padding para obtener la altura deseada */
     text-align: center;
@@ -77,10 +77,11 @@ header {
 
 
 
-
-
-
-
-
-
 /* todo: Estilos para el nivel 2 */
+.nivel2{
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+    
+}
+
