@@ -77,6 +77,23 @@
 
 
 
-/* todo: Estilos para el nivel 2 */
-
+.nivel2 {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh; /* Asegura que cubra toda la altura de la pantalla */
+    background-image: url(../Imagenes/nivel2.jpg);
+    background-size: 100% 100%; /* Ajusta la imagen para que cubra todo el área */
+    background-repeat: no-repeat; /* Asegura que la imagen no se repita */
+}
+.encabezadoN2{
+    color:white;
+    font-style: italic;
+}
+.encabezadoN2 h1{
+    font-size: 3em;
+    font-weight: bolder;
+}
+.config, .casa{
+    font-size: 2.5em;
+}
 
