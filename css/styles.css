@@ -51,7 +51,7 @@
 
 
 
-.btn-circular {
+/* .btn-circular {
     border: none; /* Sin bordes */
     color: white; /* Color del texto */
     padding: 130px 130px; /* Espaciado interno del botón */
@@ -59,7 +59,7 @@
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     position: relative; /* Para posicionar elementos internamente */
 
-}
+} */
 
 .stars {
     display: flex;
