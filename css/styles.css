@@ -11,12 +11,16 @@
     margin: 0;
     display: flex;
     flex-direction: column;
+    background-image: url('../Imagenes/vector_mar.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .encabezado {
-    background-color: rgb(226, 226, 217);
+    background-color: transparent;
+    padding: 40px; 
     text-align: center;
-    padding: 50px;
+    box-sizing: border-box; 
 }
 
 .Juego {
@@ -24,16 +28,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Asegura que la imagen no se desborde del contenedor */
-    position: relative; /* Necesario para posicionar los botones de manera absoluta */
+    overflow: hidden; 
+    position: relative; 
 }
 
 .Juego img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    display: none;
 }
 
 .button-container {
@@ -41,6 +41,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('../Imagenes/isla-01-svg.svg'); 
+    background-size: 150%; 
+    background-repeat: no-repeat; 
+}
+
+.btn-circular {
+    border: none; 
+    color: white; 
+    padding: 15px 30px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    position: relative; 
     background-image: url('../Imagenes/isla-01-svg.svg'); /* Reemplaza con la ruta de tu imagen */
     background-size: 100%; /* Ajusta el tamaño de la imagen al botón */
     background-repeat: no-repeat; /* No repite la imagen */
@@ -59,13 +71,13 @@
 .stars {
     display: flex;
     justify-content: center;
-    margin-top: 10px; /* Espacio entre el botón y las estrellas */
+    margin-top: 10px; 
 }
 
 .stars i {
-    color: rgb(211, 211, 211);/* Color de las estrellas */
-    font-size: 24px; /* Tamaño de las estrellas */
-    margin: 0 2px; /* Espacio entre las estrellas */
+    color: rgb(211, 211, 211);
+    font-size: 24px; 
+    margin: 0 2px; 
 }
 
 
@@ -73,10 +85,10 @@
 .nivel2 {
     padding: 0;
     margin: 0;
-    min-height: 100vh; /* Asegura que cubra toda la altura de la pantalla */
+    min-height: 100vh; 
     background-image: url(../Imagenes/nivel2.jpg);
-    background-size: 100% 100%; /* Ajusta la imagen para que cubra todo el área */
-    background-repeat: no-repeat; /* Asegura que la imagen no se repita */
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
 }
 #miImagen{
     height: 330px;
@@ -94,6 +106,9 @@
 }
 
 .pregunta {
+    background-color: rgba(255, 0, 0, 0.7); 
+    color: white; 
+    padding: 10px;
     background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent red background for the question */
     color: white; /* White text color */
     padding: 20px;
@@ -103,16 +118,16 @@
 
 /* Estilo para las tarjetas de respuesta */
 .respuesta {
-    height: 150px; /* Altura fija para el contenedor */
-    width: 150px; /* Anchura fija para el contenedor */
-    border: 2px solid black; /* Borde negro para el contenedor */
-    border-radius: 10px; /* Bordes redondeados para el contenedor */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+    height: 150px; 
+    width: 150px; 
+    border: 2px solid black;
+    border-radius: 10px; 
+    overflow: hidden; 
     display: flex;
     justify-content: center;
-    align-items: center; /* Centra la imagen verticalmente */
+    align-items: center; 
     margin: 15px;
-    background-color: #f0f0f0; /* Color de fondo del contenedor */
+    background-color: #f0f0f0; 
 }
 
 /* Asegura que las imágenes se ajusten al contenedor sin estirarse */
@@ -210,13 +225,17 @@
     background-color: #f0f0f0;
 }
 
-
-/*AQUI VA EL ENCABEZADO*/
+/* /AQUI VA EL ENCABEZADO/ */
 
 body {
     font-family: Arial, sans-serif;
 }
 
+.encabezado {
+    background-color: transparent;
+    text-align: center;
+    padding: 50px;
+}
 
 .game-bar {
     display: flex;
@@ -313,3 +332,6 @@ body {
     width: 50px;
     height: 50px;
 }
+
+
+
