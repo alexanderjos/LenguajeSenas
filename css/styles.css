@@ -41,19 +41,20 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-image: url('../Imagenes/isla-01-svg.svg'); /* Reemplaza con la ruta de tu imagen */
     align-items: center;
-    background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
+    background-image: url('../Imagenes/isla-01-svg.svg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: 100%; /* Ajusta el tamaño de la imagen al botón */
     background-repeat: no-repeat; /* No repite la imagen */
-    background-position: center; /* Centra la imagen en el contenedor */
 }
 
 .btn-circular {
-    border-style: solid;    color: white; /* Color del texto */
-    margin: 100px; /* Añade un margen de 20px en todos los lados */
-    padding: 13px 10px; /* Espaciado interno del botón */
+    border: none; /* Sin bordes */
+    color: white; /* Color del texto */
+    padding: 130px 130px; /* Espaciado interno del botón */
     font-size: 16px; /* Tamaño del texto */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    position: relative; /* Para posicionar elementos internamente */
+
 }
 
 .stars {
