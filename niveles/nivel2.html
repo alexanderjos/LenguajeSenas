@@ -22,7 +22,7 @@
         <!-- Encabezado -->
         <div class="row p-3 mb-3 align-items-center encabezadoN2">
             <div class="col-1 text-center">
-                <a href="../index.html" class="text-white">
+                <a href="#" id="exitButton" class="text-white">
                     <i class="fa-sharp fa-solid fa-house casa"></i>
                 </a>
             </div>
@@ -78,6 +78,23 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        document.getElementById('exitButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: '¿Estás seguro de que quieres salir del juego?',
+                showCancelButton: true,
+                confirmButtonText: `Sí, salir`,
+                cancelButtonText: `No, cancelar`,
+                icon: 'warning'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '../index.html'; // Redirigir a la página principal
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
