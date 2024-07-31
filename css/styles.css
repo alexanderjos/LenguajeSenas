@@ -11,14 +11,10 @@
     margin: 0;
     display: flex;
     flex-direction: column;
+    background-image: url(../Imagenes/vector_mar.svg)
 }
 
-.encabezado {
-    background-color: yellow;
-    padding: 40px; /* Ajusta el padding para obtener la altura deseada */
-    text-align: center;
-    box-sizing: border-box; /* Incluye padding en el cálculo de altura */
-}
+
 
 .Juego {
     flex: 1;
@@ -46,8 +42,8 @@
     background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
     background-repeat: no-repeat; /* No repite la imagen */
     background-position: center; /* Centra la imagen en el contenedor */
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
 }
 
 /*.btn-circular {*/
@@ -183,7 +179,6 @@ body {
 }
 
 .encabezado {
-    background-color: rgb(226, 226, 217);
     text-align: center;
     padding: 50px;
 }
