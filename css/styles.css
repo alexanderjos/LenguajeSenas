@@ -16,12 +16,7 @@
     background-repeat: no-repeat;
 }
 
-.encabezado {
-    background-color: transparent;
-    padding: 40px; 
-    text-align: center;
-    box-sizing: border-box; 
-}
+
 
 .Juego {
     flex: 1;
@@ -232,7 +227,7 @@ body {
 }
 
 .encabezado {
-    background-color: transparent;
+    background-color: beige;
     text-align: center;
     padding: 50px;
 }
