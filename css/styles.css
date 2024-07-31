@@ -11,7 +11,11 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-image: url(../Imagenes/vector_mar.svg)
+    background-image: url(../Imagenes/vector_mar.svg);
+    background-position: center;
+    /*background-repeat: no-repeat; !* Esto asegura que la imagen no se repita *!*/
+    /*background-size: contain; !* Esto ajusta la imagen para que se ajuste dentro del elemento sin distorsionarse *!*/
+
 }
 
 
