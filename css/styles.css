@@ -14,10 +14,9 @@
 }
 
 .encabezado {
-    background-color: yellow;
-    padding: 40px; /* Ajusta el padding para obtener la altura deseada */
+    background-color: rgb(226, 226, 217);
     text-align: center;
-    box-sizing: border-box; /* Incluye padding en el cálculo de altura */
+    padding: 50px;
 }
 
 .Juego {
@@ -218,11 +217,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.encabezado {
-    background-color: rgb(226, 226, 217);
-    text-align: center;
-    padding: 50px;
-}
 
 .game-bar {
     display: flex;
