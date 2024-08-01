@@ -36,7 +36,7 @@
     height: 100%;
 }
 
-.button-container {
+.button-container-1 {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -49,17 +49,37 @@
     height: 30%;
 }
 
+.button-container-2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../Imagenes/isla_02-svg.svg'); /* Reemplaza con la ruta de tu imagen */
+    align-items: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
+    width: 30%;
+    height: 30%;
+}
 
 
-/* .btn-circular {
-    border: none; /* Sin bordes */
-    color: white; /* Color del texto */
-    padding: 130px 130px; /* Espaciado interno del botón */
-    font-size: 16px; /* Tamaño del texto */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    position: relative; /* Para posicionar elementos internamente */
 
-} */
+
+.btn-circular {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(145deg, #f7eb00, #fff200);
+
+
+    color: rgb(255, 166, 0);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} 
 
 .stars {
     display: flex;
