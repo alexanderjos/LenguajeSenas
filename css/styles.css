@@ -49,6 +49,8 @@
     height: 30%;
 }
 
+
+
 .button-container-2 {
     position: absolute;
     display: flex;
@@ -62,16 +64,45 @@
     height: 30%;
 }
 
+.button-container-3 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../Imagenes/islas_3.svg'); /* Reemplaza con la ruta de tu imagen */
+    align-items: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
+    width: 30%;
+    height: 30%;
+}
 
 
-
-.btn-circular {
+.btn-circular-1 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     border: none;
     background: linear-gradient(145deg, #f7eb00, #fff200);
     background-image: url('../Imagenes/nivel-uno-svg.svg'); /* Ruta de la imagen de fondo */
+
+    background-size: cover; /* Cambia el tamaño de la imagen para cubrir todo el botón */
+
+    color: rgb(255, 166, 0);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} 
+
+.btn-circular-3 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(145deg, #f7eb00, #fff200);
+    background-image: url('../Imagenes/juego_03.svg'); /* Ruta de la imagen de fondo */
 
     background-size: cover; /* Cambia el tamaño de la imagen para cubrir todo el botón */
 
