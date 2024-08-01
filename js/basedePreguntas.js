@@ -3,16 +3,30 @@
 let baseDePreguntas = [
     {
         pregunta: "¿A qué animal pertenece la siguiente seña?",
-        senia: "/Imagenes/seña1.gif",
-        respuesta: "/Imagenes/caballo.gif",
+        senia: "/Imagenes/señas/seña1.gif",
+        respuesta: "/Imagenes/animales/caballo.gif",
         distractores: [
-            "/Imagenes/conejo.gif",
-            "/Imagenes/ardilla.gif",
-            "/Imagenes/canguro.gif",
-            "/Imagenes/mono.gif",
-            "/Imagenes/perro.gif",
-            "/Imagenes/toro.gif",
-            "/Imagenes/tigre.gif"
+            "/Imagenes/animales/conejo.gif",
+            "/Imagenes/animales/ardilla.gif",
+            "/Imagenes/animales/canguro.gif",
+            "/Imagenes/animales/mono.gif",
+            "/Imagenes/animales/perro.gif",
+            "/Imagenes/animales/toro.gif",
+            "/Imagenes/animales/tigre.gif"
+        ]
+    },
+    {
+        pregunta: "¿A qué animal pertenece la siguiente seña?",
+        senia: "/Imagenes/señas/seña1.gif",
+        respuesta: "/Imagenes/animales/conejo.gif",
+        distractores: [
+            "/Imagenes/animales/caballo.gif",
+            "/Imagenes/animales/ardilla.gif",
+            "/Imagenes/animales/canguro.gif",
+            "/Imagenes/animales/mono.gif",
+            "/Imagenes/animales/perro.gif",
+            "/Imagenes/animales/toro.gif",
+            "/Imagenes/animales/tigre.gif"
         ]
     }
 ];
