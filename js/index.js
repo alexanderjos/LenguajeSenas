@@ -1,5 +1,9 @@
 // js/script.js
-cargarPregunta(0);
+function getRandomNumber() {
+    return Math.floor(Math.random() * 8);
+}
+
+cargarPregunta(getRandomNumber());
 // Asegúrate de que este archivo se cargue después de data.js
 function cargarPregunta(index) {
     // Asegúrate de que `baseDePreguntas` esté disponible
