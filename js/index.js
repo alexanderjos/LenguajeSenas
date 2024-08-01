@@ -1,6 +1,6 @@
 // js/script.js
 function getRandomNumber() {
-    return Math.floor(Math.random() * 8);
+    return Math.floor(Math.random() * 7);
 }
 
 cargarPregunta(getRandomNumber());
