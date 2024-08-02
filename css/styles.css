@@ -45,8 +45,8 @@
     background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
     background-repeat: no-repeat; /* No repite la imagen */
     background-position: center; /* Centra la imagen en el contenedor */
-    width: 30%;
-    height: 30%;
+    width: 40%;
+    height: 40%;
 }
 
 
@@ -73,10 +73,33 @@
     background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
     background-repeat: no-repeat; /* No repite la imagen */
     background-position: center; /* Centra la imagen en el contenedor */
-    width: 30%;
-    height: 30%;
+    width: 50%;
+    height: 50%;
 }
-
+.button-container-4 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../Imagenes/isla_nivel_4.svg'); /* Reemplaza con la ruta de tu imagen */
+    align-items: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
+    width: 40%;
+    height: 40%;
+}
+.button-container-5 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../Imagenes/isla_nivel_5.svg'); /* Reemplaza con la ruta de tu imagen */
+    align-items: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
+    width: 40%;
+    height: 40%;
+}
 
 .btn-circular-1 {
     width: 60px;
