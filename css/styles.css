@@ -232,6 +232,16 @@
 }
 
 
+/* todo: NIVEL 1 */
+.nivel1 {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh; 
+    background-image: url(../Imagenes/fondo_nivel_1.png);
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+}
+
 /* Estilo para las tarjetas de respuesta */
 .respuesta {
     height: 150px; 
