@@ -40,7 +40,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-image: url('../Imagenes/isla-01-svg.svg'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('../Imagenes/islas/isla-01-svg.svg'); /* Reemplaza con la ruta de tu imagen */
     align-items: center;
     background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
     background-repeat: no-repeat; /* No repite la imagen */
@@ -55,7 +55,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-image: url('../Imagenes/isla_02-svg.svg'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('../Imagenes/islas/isla_02-svg.svg'); /* Reemplaza con la ruta de tu imagen */
     align-items: center;
     background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
     background-repeat: no-repeat; /* No repite la imagen */
@@ -68,7 +68,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-image: url('../Imagenes/islas_3.svg'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('../Imagenes/islas/islas_3.svg'); /* Reemplaza con la ruta de tu imagen */
     align-items: center;
     background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
     background-repeat: no-repeat; /* No repite la imagen */
@@ -80,7 +80,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-image: url('../Imagenes/isla_nivel_4.svg'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('../Imagenes/islas/isla_nivel_4.svg'); /* Reemplaza con la ruta de tu imagen */
     align-items: center;
     background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
     background-repeat: no-repeat; /* No repite la imagen */
@@ -92,7 +92,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    background-image: url('../Imagenes/isla_nivel_5.svg'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('../Imagenes/islas/isla_nivel_5.svg'); /* Reemplaza con la ruta de tu imagen */
     align-items: center;
     background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
     background-repeat: no-repeat; /* No repite la imagen */
@@ -448,6 +448,56 @@ body {
     width: 50px;
     height: 50px;
 }
+/* TEMARIO */
+.temario {
+    background-image: url(../Imagenes/fondote.avif);
+    background-repeat: no-repeat;
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    min-height: 100vh;
+    padding: 0;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center;
+}
+.temario h1{
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 2.9em;
+}
+.temario h2{
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 2em;
+}
+.TemarioV h5{
+    margin-top: 10px;
+    color: black !important;
+    font-weight: bolder;
+}
+.carousel-item h5 {
+    margin-bottom: 40px;
+}
 
+.EncabezadoT {
+    background-color: midnightblue;
+}
 
+.carousel {
+    max-width: 800px; /* Ajusta el ancho máximo del carrusel */
+    margin: auto;
+    padding: 0; /* Asegúrate de que no haya padding */
+}
 
+.carousel-item img {
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+    height: auto; /* Mantén la proporción de aspecto */
+    object-fit: cover;
+}
+
+/* FIN TEMARIO */

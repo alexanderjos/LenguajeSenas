@@ -1,0 +1,5 @@
+/* Elimina márgenes y padding de Bootstrap en contenedores */
+.container, .container-fluid, .row, .col {
+    margin: 0 !important;
+    padding: 0 !important;
+}
