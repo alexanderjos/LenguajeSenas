@@ -449,5 +449,31 @@ body {
     height: 50px;
 }
 
+/* TEMARIO */
+.temario {
+    background-image: url(../Imagenes/fondote.avif); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.EncabezadoT{
+    background-color: midnightblue;
+}
+.carousel {
+    max-width: 800px;
+    /* Ajusta el ancho máximo del carrusel */
+    margin: auto;
+}
 
+.carousel-item img {
+    width: 200px;
+    /* Ajusta el ancho de las imágenes */
+    height: auto;
+    /* Mantén la proporción de aspecto */
+    object-fit: cover;
+}
+/* FIN TEMARIO */
 
