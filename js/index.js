@@ -1,51 +1,50 @@
-// js/script.js
+// Función para obtener un número aleatorio entre 0 y 6
 function getRandomNumber() {
     return Math.floor(Math.random() * 7);
 }
 
+// Cargar una pregunta aleatoria al iniciar
 cargarPregunta(getRandomNumber());
-// Asegúrate de que este archivo se cargue después de data.js
+
+// Función para cargar una pregunta basada en un índice
 function cargarPregunta(index) {
-    // Asegúrate de que `baseDePreguntas` esté disponible
+    // Verifica que `baseDePreguntas` esté disponible
     if (typeof baseDePreguntas === 'undefined') {
         console.error('La base de preguntas no está disponible.');
         return;
     }
 
+    // Obtiene la pregunta correspondiente al índice
     objetoPregunta = baseDePreguntas[index];
     
-    // Actualiza la pregunta
+    // Actualiza el texto de la pregunta en el DOM
     document.getElementById("pregunta").innerHTML = objetoPregunta.pregunta;
 
     // Actualiza la imagen de la seña
     const imagen = document.getElementById('miImagen');
-    imagen.src = objetoPregunta.senia; // Usa la variable directamente
+    imagen.src = objetoPregunta.senia;
 
-    //arreglo para las alternativas
-    opciones = [...objetoPregunta.distractores]
-    opciones.push(objetoPregunta.respuesta)
-    for(let i=0; i<8;i++){
-        opciones.sort(()=>Math.random()-0.5);
+    // Arreglo para las alternativas de respuesta
+    opciones = [...objetoPregunta.distractores];
+    opciones.push(objetoPregunta.respuesta);
+
+    // Mezcla las opciones de manera aleatoria
+    for (let i = 0; i < 8; i++) {
+        opciones.sort(() => Math.random() - 0.5);
     }
-    const imagen1 = document.getElementById('alternativa1');
-    imagen1.src = opciones[0];
-    const imagen2 = document.getElementById('alternativa2');
-    imagen2.src = opciones[1];
-    const imagen3 = document.getElementById('alternativa3');
-    imagen3.src = opciones[2];
-    const imagen4 = document.getElementById('alternativa4');
-    imagen4.src = opciones[3];
-    const imagen5 = document.getElementById('alternativa5');
-    imagen5.src = opciones[4];
-    const imagen6 = document.getElementById('alternativa6');
-    imagen6.src = opciones[5];
-    const imagen7 = document.getElementById('alternativa7');
-    imagen7.src = opciones[6];
-    const imagen8 = document.getElementById('alternativa8');
-    imagen8.src = opciones[7];
 
+    // Asigna las opciones a las imágenes en el DOM
+    document.getElementById('alternativa1').src = opciones[0];
+    document.getElementById('alternativa2').src = opciones[1];
+    document.getElementById('alternativa3').src = opciones[2];
+    document.getElementById('alternativa4').src = opciones[3];
+    document.getElementById('alternativa5').src = opciones[4];
+    document.getElementById('alternativa6').src = opciones[5];
+    document.getElementById('alternativa7').src = opciones[6];
+    document.getElementById('alternativa8').src = opciones[7];
 }
 
+// Función para manejar la selección de una opción
 function seleccionarOpcion(index) {
     let validez = opciones[index] === objetoPregunta.respuesta;
     if (validez) {
@@ -62,6 +61,8 @@ function seleccionarOpcion(index) {
         });
     }
 }
+
+// Maneja el evento de clic en el botón de salir
 document.getElementById('exitButton').addEventListener('click', function(event) {
     event.preventDefault();
     Swal.fire({
