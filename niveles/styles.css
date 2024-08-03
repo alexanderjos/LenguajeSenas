@@ -98,9 +98,10 @@ body {
 #draggable-list li {
     padding: 10px;
     margin: 5px 0;
-    background-color: #007bff;
-    color: white;
+    background-color: #F9F5D9;
+    color: rgb(0, 0, 0);
     border-radius: 5px;
+    
     cursor: grab;
     transition: background-color 0.2s, transform 0.2s;
 }
@@ -111,5 +112,44 @@ body {
 }
 
 #draggable-list li.over {
+    background-color: #0056b3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.list-container {
+    display: flex;
+    gap: 20px;
+}
+
+.draggable-list {
+    list-style-type: none;
+    padding: 0;
+    width: 200px;
+}
+
+.draggable-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: grab;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.draggable-list li.dragging {
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+
+.draggable-list li.over {
     background-color: #0056b3;
 }
