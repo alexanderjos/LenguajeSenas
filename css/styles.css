@@ -448,32 +448,32 @@ body {
     width: 50px;
     height: 50px;
 }
-
 /* TEMARIO */
 .temario {
     background-image: url(../Imagenes/fondote.avif); 
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
     min-height: 100vh;
     padding: 0;
-    margin: 0;
+    margin: 0 !important;
+    height: 100vh;
     width: 100%;
 }
-.EncabezadoT{
+
+.EncabezadoT {
     background-color: midnightblue;
 }
+
 .carousel {
-    max-width: 800px;
-    /* Ajusta el ancho máximo del carrusel */
+    max-width: 800px; /* Ajusta el ancho máximo del carrusel */
     margin: auto;
+    padding: 0; /* Asegúrate de que no haya padding */
 }
 
 .carousel-item img {
-    width: 200px;
-    /* Ajusta el ancho de las imágenes */
-    height: auto;
-    /* Mantén la proporción de aspecto */
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+    height: auto; /* Mantén la proporción de aspecto */
     object-fit: cover;
 }
-/* FIN TEMARIO */
 
+/* FIN TEMARIO */
