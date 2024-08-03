@@ -205,6 +205,7 @@
     background-image: url(../Imagenes/nivel2.jpg);
     background-size: 100% 100%; 
     background-repeat: no-repeat; 
+    overflow-x: hidden;
 }
 #miImagen{
     height: 330px;
