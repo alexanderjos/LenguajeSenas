@@ -461,7 +461,28 @@ body {
     align-items: center; /* Centra verticalmente */
     text-align: center;
 }
-
+.temario h1{
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 2.9em;
+}
+.temario h2{
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 2em;
+}
+.TemarioV h5{
+    margin-top: 10px;
+    color: black !important;
+    font-weight: bolder;
+}
+.carousel-item h5 {
+    margin-bottom: 60px;
+}
 
 .EncabezadoT {
     background-color: midnightblue;
