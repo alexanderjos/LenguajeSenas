@@ -1,3 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inicio {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../Imagenes/vector_mar.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.Juego {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    position: relative; 
+}
+
+.Juego img {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.button-container-1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../Imagenes/islas/isla-01-svg.svg'); /* Reemplaza con la ruta de tu imagen */
+    align-items: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
+    width: 40%;
+    height: 40%;
+}
+
+
+
+.button-container-2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../Imagenes/islas/isla_02-svg.svg'); /* Reemplaza con la ruta de tu imagen */
+    align-items: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
+    width: 30%;
+    height: 30%;
+}
+
+.button-container-3 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../Imagenes/islas/islas_3.svg'); /* Reemplaza con la ruta de tu imagen */
+    align-items: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
+    width: 50%;
+    height: 50%;
+}
+.button-container-4 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../Imagenes/islas/isla_nivel_4.svg'); /* Reemplaza con la ruta de tu imagen */
+    align-items: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
+    width: 40%;
+    height: 40%;
+}
+.button-container-5 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../Imagenes/islas/isla_nivel_5.svg'); /* Reemplaza con la ruta de tu imagen */
+    align-items: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen dentro del botón */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
+    width: 40%;
+    height: 40%;
+}
+
+.btn-circular-1 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(145deg, #f7eb00, #fff200);
+    background-image: url('../Imagenes/nivel-uno-svg.svg'); /* Ruta de la imagen de fondo */
+
+    background-size: cover; /* Cambia el tamaño de la imagen para cubrir todo el botón */
+
+    color: rgb(255, 166, 0);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} 
+
+.btn-circular-2{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(145deg, #f7eb00, #fff200);
+    background-image: url('../Imagenes/boton_nivel_2.svg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Cambia el tamaño de la imagen para cubrir todo el botón */
+    color: rgb(255, 166, 0);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-circular-4 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(145deg, #f7eb00, #fff200);
+    background-image: url('../Imagenes/boton_nivel_4.svg'); /* Ruta de la imagen de fondo */
+
+    background-size: cover; /* Cambia el tamaño de la imagen para cubrir todo el botón */
+
+    color: rgb(255, 166, 0);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} 
+
+.btn-circular-3 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(145deg, #f7eb00, #fff200);
+    background-image: url('../Imagenes/juego_03.svg'); /* Ruta de la imagen de fondo */
+
+    background-size: cover; /* Cambia el tamaño de la imagen para cubrir todo el botón */
+
+    color: rgb(255, 166, 0);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} 
+
+.btn-circular-5 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-image: url('../Imagenes/boton_nivel_5.svg'); /* Ruta de la imagen de fondo */
+
+    background-size: cover; /* Cambia el tamaño de la imagen para cubrir todo el botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} 
+.stars {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; 
+}
+
+.stars i {
+    color: rgb(211, 211, 211);
+    font-size: 24px; 
+    margin: 0 2px; 
+}
+
+
+/* todo: NIVEL 2 */
+.nivel2 {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh; 
+    background-image: url(../Imagenes/nivel2.jpg);
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+    overflow-x: hidden;
+}
+#miImagen{
+    height: 330px;
+}
+.encabezadoN2{
+    color:white;
+    font-style: italic;
+}
+.encabezadoN2 h1{
+    font-size: 3em;
+    font-weight: bolder;
+}
+.config, .casa{
+    font-size: 2.5em;
+}
+
+.pregunta {
+    background-color: rgba(255, 0, 0, 0.7); 
+    color: white; 
+    padding: 10px;
+    background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent red background for the question */
+    color: white; /* White text color */
+    padding: 20px;
+    border-radius: 15px;
+}
+
+
+/* todo: NIVEL 1 */
+.nivel1 {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh; 
+    background-image: url(../Imagenes/fondo_nivel_1.png);
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+}
+
+/* Estilo para las tarjetas de respuesta */
+.respuesta {
+    height: 150px; 
+    width: 150px; 
+    border: 2px solid black;
+    border-radius: 10px; 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 15px;
+    background-color: white; 
+}
+
+/* Asegura que las imágenes se ajusten al contenedor sin estirarse */
+.respuesta img {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain;
+}
+/* Estilos para la ventana modal */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Contenido de la ventana modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Botón de cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/*Aqui se realiza la flechita para el menu*/
+.menu-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 24px;
+}
+
+.menu {
+    position: absolute;
+    top: 60px;
+    left: -300px;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu ul li:hover {
+    background-color: #f0f0f0;
+}
+
+/* /AQUI VA EL ENCABEZADO/ */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.encabezado {
+    background-color: transparent;
+    text-align: center;
+    padding: 50px;
+}
+
+.game-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.timer-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 107, 107, 0.8);
+    border-radius: 25px;
+    padding: 5px 15px;
+    color: white;
+}
+
+.heart-container {
+    position: relative;
+    margin-right: 15px;
+}
+
+.heart-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.countdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.timer {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.avatar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #007bff, #8a2be2);
+    border-radius: 15px;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    margin: 15px;
+    clip-path: polygon(10% 0%, 90% 0%, 70% 100%, 30% 100%);
+}
+
+.avatar-image {
+    width: 50px;
+    height: auto;
+}
+
+.coins-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(254, 202, 87, 0.8);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.coin-icon {
+    width: 50px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.coin-count {
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+
+.icons-container {
+    display: flex;
+    gap: 10px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+/* TEMARIO */
+.temario {
+    background-image: url(../Imagenes/fondote.avif);
+    background-repeat: no-repeat;
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    min-height: 100vh;
+    padding: 0;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center;
+}
+
+.temario h1{
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 2.9em;
+}
+.temario h2{
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 2em;
+}
+.TemarioV h5{
+    margin-top: 10px;
+    color: black !important;
+    font-weight: bolder;
+}
+.carousel-item h5 {
+    margin-bottom: 40px;
+}
+
+.EncabezadoT {
+    background-color: midnightblue;
+}
+
+.carousel {
+    max-width: 800px; /* Ajusta el ancho máximo del carrusel */
+    margin: auto;
+    padding: 0; /* Asegúrate de que no haya padding */
+}
+
+.carousel-item img {
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+    height: auto; /* Mantén la proporción de aspecto */
+    object-fit: cover;
+}
+
+/* FIN TEMARIO */
+
 body {
     font-family: Arial, sans-serif;
 }
