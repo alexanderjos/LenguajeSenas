@@ -513,3 +513,53 @@ body {
 }
 
 /* FIN TEMARIO */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.images, .word-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    background-color: #f8f8f8;
+}
+
+.image-box, .word-box ul li {
+    margin: 10px 0;
+    cursor: grab;
+    border: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.image-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+.word-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.word-box ul li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+.over {
+    border: 1px dashed #000;
+}
