@@ -23,8 +23,8 @@ function dragEnd(e) {
 
 // Añadir eventos a las zonas de caída
 dropZones.forEach(zone => {
-    zone.addEventListener('dragover', dragOver);
-    zone.addEventListener('drop', dropItem);
+    zone.addEventListener('dragover',  dragOver);
+    zone.addEventListener('drop',      dropItem);
     zone.addEventListener('dragleave', dragLeave);
 });
 
@@ -56,6 +56,8 @@ function dropItem(e) {
     } else {
         alert('Esta zona ya tiene un elemento. Elimine el contenido primero si desea reemplazarlo.');
     }
+
+
 }
 
 // Permitir restaurar el elemento a la lista
