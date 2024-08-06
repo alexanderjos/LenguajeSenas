@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('/Imagenes/fondo_nivel4.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative; /* Asegura que el pseudo-elemento esté posicionado relativo al body */
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
+    z-index: 1; /* Coloca la superposición detrás del contenido */
+}
+
+* {
+    position: relative; /* Asegura que el contenido esté por encima de la superposición */
+    z-index: 2;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.level {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - 60px); /* Adjust height considering header height */
+    padding: 20px;
+}
+
+.left-box, .right-box {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.left-box {
+    background-color: #f8f8d8;
+}
+
+.right-box {
+    background-color: #2e3b55;
+    color: white;
+}
+
+.action-img, .camera-img {
+    width: 150px;
+    height: 200px;
+}
+
+.middle-text {
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+}
+
+.middle-text p {
+    color: white; /* Cambiar color a blanco */
+    font-weight: bold; /* Hacer texto en negrita */
+}   
+
+.encabezadoN2{
+    color:white;
+    font-style: italic;
+}
+.encabezadoN2 h1{
+    font-size: 3em;
+    font-weight: bolder;
+}
+.config, .casa{
+    font-size: 2.5em;
+}
