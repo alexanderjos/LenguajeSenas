@@ -1,123 +1,80 @@
-const list = document.getElementById('draggable-list');
+// Selección de elementos de la lista y las zonas de caída
+const listItems = document.querySelectorAll('#draggable-list li');
+const dropZones = document.querySelectorAll('.drop-zone');
 
-// Add event listeners for drag events
-list.addEventListener('dragstart', handleDragStart);
-list.addEventListener('dragover', handleDragOver);
-list.addEventListener('drop', handleDrop);
-list.addEventListener('dragend', handleDragEnd);
-list.addEventListener('dragenter', handleDragEnter);
-list.addEventListener('dragleave', handleDragLeave);
-
-function handleDragStart(e) {
-    draggedItem = e.target;
-    e.target.classList.add('dragging');
-    setTimeout(() => e.target.classList.add('hidden'), 0);
-}
-
-function handleDragOver(e) {
-    e.preventDefault();
-}
-
-function handleDrop(e) {
-    e.preventDefault();
-    if (e.target.tagName === 'LI' && e.target !== draggedItem) {
-        const allItems = Array.from(list.children);
-        const currentIdx = allItems.indexOf(e.target);
-        const draggedIdx = allItems.indexOf(draggedItem);
-
-        if (currentIdx < draggedIdx) {
-            e.target.before(draggedItem);
-        } else {
-            e.target.after(draggedItem);
-        }
-    }
-    resetDragStyles();
-}
-
-function handleDragEnd(e) {
-    e.target.classList.remove('hidden');
-    e.target.classList.remove('dragging');
-}
-
-function handleDragEnter(e) {
-    if (e.target.tagName === 'LI' && e.target !== draggedItem) {
-        e.target.classList.add('over');
-    }
-}
-
-function handleDragLeave(e) {
-    if (e.target.tagName === 'LI') {
-        e.target.classList.remove('over');
-    }
-}
-
-function resetDragStyles() {
-    const allItems = Array.from(list.children);
-    allItems.forEach(item => item.classList.remove('over', 'hidden', 'dragging'));
-}
-
-const lists = document.querySelectorAll('.draggable-list');
-let draggedItem = null;
-
-// Add event listeners for drag events to each list
-lists.forEach(list => {
-    list.addEventListener('dragstart', handleDragStart);
-    list.addEventListener('dragover', handleDragOver);
-    list.addEventListener('drop', handleDrop);
-    list.addEventListener('dragend', handleDragEnd);
-    list.addEventListener('dragenter', handleDragEnter);
-    list.addEventListener('dragleave', handleDragLeave);
+// Añadir los eventos de arrastrar a los elementos de la lista
+listItems.forEach(item => {
+    item.addEventListener('dragstart', dragStart);
+    item.addEventListener('dragend', dragEnd);
 });
 
-function handleDragStart(e) {
-    draggedItem = e.target;
-    e.target.classList.add('dragging');
-    setTimeout(() => e.target.classList.add('hidden'), 0);
+function dragStart(e) {
+    // Guardar el elemento arrastrado
+    e.dataTransfer.setData('text/plain', e.target.textContent);
+    e.dataTransfer.effectAllowed = 'move';
+    setTimeout(() => {
+        e.target.classList.add('invisible');
+    }, 0);
 }
 
-function handleDragOver(e) {
-    e.preventDefault();
+function dragEnd(e) {
+    e.target.classList.remove('invisible');
 }
 
-function handleDrop(e) {
-    e.preventDefault();
-    if (e.target.tagName === 'LI' && e.target !== draggedItem) {
-        const list = e.target.parentNode;
-        const allItems = Array.from(list.children);
-        const currentIdx = allItems.indexOf(e.target);
-        const draggedIdx = allItems.indexOf(draggedItem);
+// Añadir eventos a las zonas de caída
+dropZones.forEach(zone => {
+    zone.addEventListener('dragover',  dragOver);
+    zone.addEventListener('drop',      dropItem);
+    zone.addEventListener('dragleave', dragLeave);
+});
 
-        if (currentIdx < draggedIdx) {
-            e.target.before(draggedItem);
-        } else {
-            e.target.after(draggedItem);
+function dragOver(e) {
+    e.preventDefault(); // Permitir el "drop"
+    e.target.classList.add('hovered');
+    e.dataTransfer.dropEffect = 'move';
+}
+
+function dragLeave(e) {
+    e.target.classList.remove('hovered');
+}
+
+function dropItem(e) {
+    e.preventDefault();
+    e.target.classList.remove('hovered');
+
+    const draggedItem = e.dataTransfer.getData('text/plain');
+
+    // Verificar si la zona de caída ya tiene contenido
+    if (e.target.textContent.trim() === '') {
+        e.target.textContent = draggedItem;
+
+        // Buscar y eliminar el elemento de la lista arrastrado
+        const listItem = Array.from(listItems).find(item => item.textContent.trim() === draggedItem);
+        if (listItem) {
+            listItem.remove();
         }
-    } else if (e.target.tagName === 'UL') {
-        e.target.appendChild(draggedItem);
+    } else {
+        alert('Esta zona ya tiene un elemento. Elimine el contenido primero si desea reemplazarlo.');
     }
-    resetDragStyles();
+
+
 }
 
-function handleDragEnd(e) {
-    e.target.classList.remove('hidden');
-    e.target.classList.remove('dragging');
-    resetDragStyles();
-}
+// Permitir restaurar el elemento a la lista
+dropZones.forEach(zone => {
+    zone.addEventListener('dblclick', function(e) {
+        if (e.target.textContent.trim() !== '') {
+            const itemText = e.target.textContent.trim();
+            e.target.textContent = '';
 
-function handleDragEnter(e) {
-    if (e.target.tagName === 'LI' && e.target !== draggedItem) {
-        e.target.classList.add('over');
-    }
-}
+            // Restaurar el elemento a la lista
+            const listItem = document.createElement('li');
+            listItem.textContent = itemText;
+            listItem.draggable = true;
+            listItem.addEventListener('dragstart', dragStart);
+            listItem.addEventListener('dragend', dragEnd);
 
-function handleDragLeave(e) {
-    if (e.target.tagName === 'LI') {
-        e.target.classList.remove('over');
-    }
-}
-
-function resetDragStyles() {
-    lists.forEach(list => {
-        Array.from(list.children).forEach(item => item.classList.remove('over', 'hidden', 'dragging'));
+            document.getElementById('draggable-list').appendChild(listItem);
+        }
     });
-}
+});
