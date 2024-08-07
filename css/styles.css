@@ -200,7 +200,7 @@
     padding: 0;
     margin: 0;
     min-height: 100vh; 
-    background-image: url(../Imagenes/nivel2.jpg);
+    background-image: url(../Imagenes/fondos/nivel2.jpg);
     background-size: 100% 100%; 
     background-repeat: no-repeat; 
     overflow-x: hidden;
@@ -236,7 +236,7 @@
     padding: 0;
     margin: 0;
     min-height: 100vh; 
-    background-image: url(../Imagenes/fondo_nivel_1.png);
+    background-image: url(../Imagenes/fondos/fondo_nivel_1.png);
     background-size: 100% 100%; 
     background-repeat: no-repeat; 
 }
@@ -459,7 +459,7 @@ body {
 }
 /* TEMARIO */
 .temario {
-    background-image: url(../Imagenes/fondote.avif);
+    background-image: url(../Imagenes/fondos/fondote.avif);
     background-repeat: no-repeat;
     background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
     min-height: 100vh;
