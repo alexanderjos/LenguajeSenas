@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 .nivel1 {
     padding: 0;
@@ -8,6 +9,7 @@
     background-repeat: no-repeat;
     font-size: 20px;
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
