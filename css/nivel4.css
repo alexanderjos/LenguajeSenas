@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('/Imagenes/fondo_nivel4.jpeg') no-repeat center center fixed;
+    background: url('/Imagenes/fondos/fondo_nivel4.jpeg') no-repeat center center fixed;
     background-size: cover;
     position: relative; /* Asegura que el pseudo-elemento esté posicionado relativo al body */
     min-height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
@@ -13,6 +13,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
+    min-height: 100vh;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
     z-index: 1; /* Coloca la superposición detrás del contenido */
