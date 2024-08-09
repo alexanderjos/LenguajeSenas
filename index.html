@@ -2,97 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"></script>
-    <title>INDEX</title>
-    <script defer src="/js/script.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/master.css">
+    <script defer src="js/scripts1.js"></script>
+    <script defer src="js/register.js" type="module"></script>
+    <!-- <script src="js/iffe_login.js"></script> -->
+    <script defer src="js/login_modulo.js" type="module"></script>
+    <title>FORMULARIO DE REGISTRO E INICIO SESIÓN</title>
 </head>
-
-<body class="inicio">
-    <header class="encabezado">
-        <!-- barra superior --> 
-        <div class="game-bar">
-            <div class="timer-container">
-                <div class="heart-container">
-                    <img src="Imagenes/corazon.gif" alt="Heart" class="heart-icon">
-                    <span id="countdown" class="countdown">3</span>
+<body>
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido</h2>
+                <p>Para unirte a nuestra comunidad por favor Inicia Sesión con tus datos</p>
+                <input type="button" value="Iniciar Sesión" id="sign-in">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Crear una Cuenta</h2>
+                <div class="icons">
+                    <i class='bx bxl-google'></i>
+                    <i class='bx bxl-github'></i>
+                    <i class='bx bxl-linkedin' ></i>
                 </div>
-                <div class="timer" id="timer">00:00:00</div>
-            </div>
-            <div class="avatar-container">
-                <img src="Imagenes/avatar.png" alt="Avatar" class="avatar-image">           
-            </div>
-            <div class="coins-container">
-                <img src="Imagenes/oro.gif" alt="Moneda" class="coin-icon">
-                <span class="coin-count"> 4500</span>
-            </div>
-            <div class="icons-container">
-                <img src="Imagenes/configuracion.png" alt="Configuración" class="icon settings-icon">
-            </div>
-        </div>
-    </header>
-    
-    <div class="Juego">
-        <div class="button-container-1" style="top: 80px; left: 75px;">
-            <a href="/Vista/nivel1.html" class="btn-circular-1"></a>
-            <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-        </div>
-
-        <div class="button-container-2" style="bottom: 80px; left: 40px;">
-            <a href="Vista/nivel2.html" class="btn-circular-2"></a>
-            <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+                <p>o usa tu email para registrarte</p>
+                <form class="form form-register" action="/php/register.php" method="post" novalidate>
+                    <div>
+                        <label>
+                            <i class='bx bx-user' ></i>
+                            <input type="text" placeholder="Nombre Usuario" name="userName" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label >
+                            <i class='bx bx-envelope' ></i>
+                            <input type="email" placeholder="Correo Electronico" name="userEmail" required>
+                        </label>
+                    </div>
+                   <div>
+                        <label>
+                            <i class='bx bx-lock-alt' ></i>
+                            <input type="password" placeholder="Contraseña" name="userPassword" required>
+                        </label>
+                   </div>
+                   
+                    <input type="submit" value="Registrarse">
+                    <div class="alerta-error">Todos los campos son obligatorios</div>
+                    <div class="alerta-exito">Te registraste correctamente</div>
+                </form>
             </div>
         </div>
-        
-        <div class="button-container-3" style="top: 150px; left: 320px;">
-            <a href="" class="btn-circular-3"></a>
-            <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-        </div>
-        <div class="button-container-4" style="top: 50px; right: 150px;">
-            <a href="/Vista/nivel4.html" class="btn-circular-4"></a>
-            <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-        </div>
-        <div class="button-container-5" style="bottom: 80px; right: 120px;">
-            <a href="" class="btn-circular-5"></a>
-            <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-        </div>
-
-        <!-- Flecha desplegable -->
-        <div class="menu-toggle">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <nav class="menu">
-            <ul>
-                <li><a href="/Temario/Temario1.html">Tema 1: Vocabulario Básico</a></li>
-                <li><a href="#">Tema 2: Tecnología y Redes Sociales</a></li>
-                <li><a href="#">Tema 3: Colores y números</a></li>
-                <li><a href="#">Tema 4: Naturaleza y animales</a></li>
-                <li><a href="#">Tema 5: Tiempo (meses, día, tiempo)</a></li>
-            </ul>
-        </nav>
     </div>
 
-   
+
+    <div class="container-form login hide">
+        <div class="information">
+            <div class="info-childs">
+                <h2>¡¡Bienvenido nuevamente!!</h2>
+                <p>Para unirte a nuestra comunidad por favor Inicia Sesión con tus datos</p>
+                <input type="button" value="Registrarse" id="sign-up">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Iniciar Sesión</h2>
+                <div class="icons">
+                    <i class='bx bxl-google'></i>
+                    <i class='bx bxl-github'></i>
+                    <i class='bx bxl-linkedin' ></i>
+                </div>
+                <p>o Iniciar Sesión con una cuenta</p>
+                <form class="form form-login" action="/php/login.php" method="post" novalidate>
+                    <div>
+                        <label >
+                            <i class='bx bx-envelope' ></i>
+                            <input type="email" placeholder="Correo Electronico" name="userEmail" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <i class='bx bx-lock-alt' ></i>
+                            <input type="password" placeholder="Contraseña" name="userPassword" required>
+                        </label>
+                    </div>
+                    <input type="submit" value="Iniciar Sesión">
+                    <div class="alerta-error">Todos los campos son obligatorios</div>
+                    <div class="alerta-exito">Iniciaste sesión correctamente</div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
+<!--Este es la tabla:
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+-->
