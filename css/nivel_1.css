@@ -1,53 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 .nivel1 {
     padding: 0;
     margin: 0;
     min-height: 100vh; 
-    background: url(../Imagenes/fondos/fondo_nivel_1.png) no-repeat center center fixed;
-    background-size: 100% 100%; 
+    background-image: url(../Imagenes/fondos/fondo_nivel_1.png);
     background-repeat: no-repeat; 
     overflow-x: hidden;
+    background-size: cover;
+    
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
+    z-index: 1; /* Coloca la superposición detrás del contenido */
+    background-size: cover;
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
 }
+* {
+    position: relative; /* Asegura que el contenido esté por encima de la superposición */
+    z-index: 2;
+    color: rgb(255, 255, 255);
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
-header h2 {
-    font-size: 20px;
-    margin: 0;
 }
 
 .content {
     display: flex;
-    justify-content: space-between;
 }
 
-.images {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
+
 
 .image-box {
     border: 2px solid #ccc;
@@ -57,10 +44,22 @@ header h2 {
     border-radius: 10px;
 }
 
-.image-box img {
-    max-width: 100%;
-    height: auto;
+
+.images {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
 }
+
+.image-box {
+    position: relative;
+    width: 150px;
+    margin: 10px;
+}
+
 
 .word-box {
     border: 2px solid #ccc;
@@ -83,14 +82,7 @@ header h2 {
     margin-bottom: 5px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f9fa;
-}
+
 
 #draggable-list {
     list-style-type: none;
@@ -127,56 +119,12 @@ body {
     background-color: #f8f9fa;
 }
 
-.list-container {
-    display: flex;
-    gap: 20px;
-}
-
-.draggable-list {
-    list-style-type: none;
-    padding: 0;
-    width: 200px;
-}
-
-.draggable-list li {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: grab;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-.draggable-list li.dragging {
-    opacity: 0.5;
-    transform: scale(1.05);
-}
-
-.draggable-list li.over {
-    background-color: #0056b3;
-}
 
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px;
-}
 
-.image-box {
-    position: relative;
-    width: 150px;
-    margin: 10px;
-    text-align: center;
-}
 
 .drop-zone {
     width: 100%;
@@ -199,6 +147,9 @@ body {
     margin-top: 20px;
 }
 
+
+/*LISTA
+*/
 #draggable-list {
     list-style: none;
     padding: 0;
@@ -220,5 +171,8 @@ body {
 .invisible {
     display: none;
 }
+
+
+
 
 
