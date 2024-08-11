@@ -16,17 +16,15 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100vh;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
     z-index: 1; /* Coloca la superposición detrás del contenido */
-    background-size: cover;
-
 }
+
+
 * {
     position: relative; /* Asegura que el contenido esté por encima de la superposición */
     z-index: 2;
-    color: rgb(255, 255, 255);
 
 }
 
@@ -34,7 +32,9 @@ body::before {
     display: flex;
 }
 
-
+.col-10 {
+    color:#fff;
+}
 
 .image-box {
     border: 2px solid #ccc;
@@ -44,6 +44,19 @@ body::before {
     border-radius: 10px;
 }
 
+
+.encabezadoN2{
+    color:white;
+    font-style: italic;
+}
+.encabezadoN2 h1{
+    font-size: 3em;
+    font-weight: bolder;
+}
+
+.config, .casa{
+    font-size: 2.5em;
+}
 
 .images {
     grid-template-columns: repeat(4, 1fr);
@@ -110,14 +123,6 @@ body::before {
     background-color: #0056b3;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f9fa;
-}
 
 
 
