@@ -1,224 +1,207 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+/* Definición de variables para facilitar la personalización */
+:root {
+    --primary-color: #fff;
+    --secondary-color: #ccc;
+    --highlight-color: #00bcd4;
+    --background-color: #f1fdff;
 
-.nivel1 {
+    --font-size-large: 3em;
+    --font-size-medium: 2.5em;
+    --font-size-small: 18px;
+    --dark-background-color: #333;
+    --dark-text-color: #fff;
+}
+
+/* General Styles */
+body, .nivel1 {
     padding: 0;
     margin: 0;
     min-height: 100vh; 
-    background: url(../Imagenes/fondos/fondo_nivel_1.png) no-repeat center center fixed;
-    background-size: 100% 100%; 
+    background-image: url(../Imagenes/fondos/fondo_nivel_1.png);
     background-repeat: no-repeat; 
-    overflow-x: hidden;
+    background-size: cover;
+    overflow-x: hidden; /* Previene el scroll horizontal */
+    position: relative;
+    background-color: var(--primary-color);
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #fff;
+/* Overlay effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+    z-index: 1;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+/* General element style */
+* {
+    position: relative; /* Asegura que los elementos estén sobre el overlay */
+    z-index: 2;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
-header h2 {
-    font-size: 20px;
-    margin: 0;
-}
-
+/* Content container */
 .content {
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* Organiza el contenido en fila */
 }
 
+/* Header styles */
+.encabezadoN2 {
+    color: var(--primary-color);
+    font-style: italic;
+}
+.encabezadoN2 h1 {
+    font-size: var(--font-size-large);
+    font-weight: bolder;
+}
+
+/* Icon styles */
+.config, .casa {
+    font-size: var(--font-size-medium);
+    color: var(--primary-color);
+}
+
+.config:focus, .casa:focus {
+    outline: 2px solid var(--highlight-color);
+}
+
+/* Image container */
 .images {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se acomoden en varias filas */
+    justify-content: space-around; /* Espacia uniformemente las imágenes */
+    margin: 20px;
+    gap: 50px;
 }
 
+/* Individual image box */
 .image-box {
-    border: 2px solid #ccc;
+    border: 2px solid var(--secondary-color);
     padding: 10px;
     text-align: center;
-    background-color: #fff;
+    background-color: var(--primary-color);
     border-radius: 10px;
+    width: 150px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-box img {
-    max-width: 100%;
-    height: auto;
+.image-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+
+/* CAJON DE PALABRAS container */
 .word-box {
-    border: 2px solid #ccc;
-    padding: 10px;
-    background-color: #fff;
+    border: 2px solid var(--secondary-color);
+    padding: 20px;
+    background-color: var(--primary-color);
     border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 29px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    float: none;
 }
 
+
+.word-box:hover {
+    transform: translateY(-5px); /* Eleva la caja al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Word box header */
 .word-box h3 {
-    margin: 0 0 10px 0;
-    font-size: 18px;
+    margin: 0 0 15px 0;
+    font-size: var(--font-size-small);
+    text-align: center; /* Centra el título */
+    color: var(--highlight-color); /* Color destacado */
+    font-weight: bold;
 }
 
-.word-box ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.word-box ul li {
-    margin-bottom: 5px;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f9fa;
-}
-
+/* Draggable list styles */
 #draggable-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     width: 200px;
 }
 
-#draggable-list li {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #F9F5D9;
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
 
+
+
+
+
+#draggable-list li {
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #cbe8fb;
+    color: rgb(0, 0, 0);
+    border-radius: 8px; /* Bordes más redondeados */
     cursor: grab;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
 }
 
 #draggable-list li.dragging {
     opacity: 0.5;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Agranda el elemento arrastrado */
 }
 
 #draggable-list li.over {
-    background-color: #0056b3;
+    background-color: #ff2200; /* Resalta cuando está sobre otra lista */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f9fa;
-}
-
-.list-container {
-    display: flex;
-    gap: 20px;
-}
-
-.draggable-list {
-    list-style-type: none;
-    padding: 0;
-    width: 200px;
-}
-
-.draggable-list li {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: grab;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-.draggable-list li.dragging {
-    opacity: 0.5;
-    transform: scale(1.05);
-}
-
-.draggable-list li.over {
-    background-color: #0056b3;
-}
-
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px;
-}
-
-.image-box {
-    position: relative;
-    width: 150px;
-    margin: 10px;
-    text-align: center;
-}
-
+/* Drop zone for images */
 .drop-zone {
     width: 100%;
     height: 40px;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--secondary-color);
     margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
     transition: background-color 0.3s ease;
+
 }
 
 .drop-zone.hovered {
-    background-color: #e0f7fa;
-    border-color: #00bcd4;
+    background-color: #a9e4ec; /* Cambio de color al estar sobre la zona */
+    border-color: var(--highlight-color); /* Cambio de color del borde */
 }
 
-.word-box {
-    margin-top: 20px;
-}
 
-#draggable-list {
-    list-style: none;
-    padding: 0;
-}
 
-#draggable-list li {
-    padding: 10px;
-    margin: 5px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-#draggable-list li:hover {
-    background-color: #e0e0e0;
-}
-
+/* Invisible elements */
 .invisible {
-    display: none;
+    display: none; /* Oculta elementos invisibles */
 }
 
 
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-box {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .encabezadoN2 h1 {
+        font-size: 2em;
+    }
+
+    .config, .casa {
+        font-size: 2em;
+    }
+}

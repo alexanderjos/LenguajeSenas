@@ -23,8 +23,8 @@ function dragEnd(e) {
 
 // Añadir eventos a las zonas de caída
 dropZones.forEach(zone => {
-    zone.addEventListener('dragover',  dragOver);
-    zone.addEventListener('drop',      dropItem);
+    zone.addEventListener('dragover', dragOver);
+    zone.addEventListener('drop', dropItem);
     zone.addEventListener('dragleave', dragLeave);
 });
 
@@ -48,16 +48,14 @@ function dropItem(e) {
     if (e.target.textContent.trim() === '') {
         e.target.textContent = draggedItem;
 
-        // Buscar y eliminar el elemento de la lista arrastrado
+        // Ocultar el elemento de la lista arrastrado
         const listItem = Array.from(listItems).find(item => item.textContent.trim() === draggedItem);
         if (listItem) {
-            listItem.remove();
+            listItem.style.display = 'none';
         }
     } else {
         alert('Esta zona ya tiene un elemento. Elimine el contenido primero si desea reemplazarlo.');
     }
-
-
 }
 
 // Permitir restaurar el elemento a la lista
@@ -68,13 +66,10 @@ dropZones.forEach(zone => {
             e.target.textContent = '';
 
             // Restaurar el elemento a la lista
-            const listItem = document.createElement('li');
-            listItem.textContent = itemText;
-            listItem.draggable = true;
-            listItem.addEventListener('dragstart', dragStart);
-            listItem.addEventListener('dragend', dragEnd);
-
-            document.getElementById('draggable-list').appendChild(listItem);
+            const listItem = Array.from(listItems).find(item => item.textContent.trim() === itemText);
+            if (listItem) {
+                listItem.style.display = ''; // Mostrar el elemento de nuevo
+            }
         }
     });
 });
