@@ -1,15 +1,31 @@
+/* Definición de variables para facilitar la personalización */
+:root {
+    --primary-color: #fff;
+    --secondary-color: #ccc;
+    --highlight-color: #00bcd4;
+    --background-color: #f1fdff;
 
-.nivel1 {
+    --font-size-large: 3em;
+    --font-size-medium: 2.5em;
+    --font-size-small: 18px;
+    --dark-background-color: #333;
+    --dark-text-color: #fff;
+}
+
+/* General Styles */
+body, .nivel1 {
     padding: 0;
     margin: 0;
     min-height: 100vh; 
     background-image: url(../Imagenes/fondos/fondo_nivel_1.png);
     background-repeat: no-repeat; 
-    overflow-x: hidden;
     background-size: cover;
-    
+    overflow-x: hidden; /* Previene el scroll horizontal */
+    position: relative;
+    background-color: var(--primary-color);
 }
 
+/* Overlay effect */
 body::before {
     content: "";
     position: absolute;
@@ -17,167 +33,175 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
-    z-index: 1; /* Coloca la superposición detrás del contenido */
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+    z-index: 1;
 }
 
-
+/* General element style */
 * {
-    position: relative; /* Asegura que el contenido esté por encima de la superposición */
+    position: relative; /* Asegura que los elementos estén sobre el overlay */
     z-index: 2;
-
 }
 
+/* Content container */
 .content {
-    display: flex;
+    display: flex; /* Organiza el contenido en fila */
 }
 
-.col-10 {
-    color:#fff;
-}
-
-.image-box {
-    border: 2px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 10px;
-}
-
-
-.encabezadoN2{
-    color:white;
+/* Header styles */
+.encabezadoN2 {
+    color: var(--primary-color);
     font-style: italic;
 }
-.encabezadoN2 h1{
-    font-size: 3em;
+.encabezadoN2 h1 {
+    font-size: var(--font-size-large);
     font-weight: bolder;
 }
 
-.config, .casa{
-    font-size: 2.5em;
+/* Icon styles */
+.config, .casa {
+    font-size: var(--font-size-medium);
+    color: var(--primary-color);
 }
 
+.config:focus, .casa:focus {
+    outline: 2px solid var(--highlight-color);
+}
+
+/* Image container */
 .images {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que las imágenes se acomoden en varias filas */
+    justify-content: space-around; /* Espacia uniformemente las imágenes */
     margin: 20px;
+    gap: 50px;
 }
 
+/* Individual image box */
 .image-box {
-    position: relative;
+    border: 2px solid var(--secondary-color);
+    padding: 10px;
+    text-align: center;
+    background-color: var(--primary-color);
+    border-radius: 10px;
     width: 150px;
     margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
+/* CAJON DE PALABRAS container */
 .word-box {
-    border: 2px solid #ccc;
-    padding: 10px;
-    background-color: #fff;
+    border: 2px solid var(--secondary-color);
+    padding: 20px;
+    background-color: var(--primary-color);
     border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 29px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    float: none;
 }
 
+
+.word-box:hover {
+    transform: translateY(-5px); /* Eleva la caja al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Word box header */
 .word-box h3 {
-    margin: 0 0 10px 0;
-    font-size: 18px;
+    margin: 0 0 15px 0;
+    font-size: var(--font-size-small);
+    text-align: center; /* Centra el título */
+    color: var(--highlight-color); /* Color destacado */
+    font-weight: bold;
 }
 
-.word-box ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.word-box ul li {
-    margin-bottom: 5px;
-}
-
-
-
+/* Draggable list styles */
 #draggable-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     width: 200px;
 }
 
-#draggable-list li {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #F9F5D9;
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
 
+
+
+
+
+#draggable-list li {
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #cbe8fb;
+    color: rgb(0, 0, 0);
+    border-radius: 8px; /* Bordes más redondeados */
     cursor: grab;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
 }
 
 #draggable-list li.dragging {
     opacity: 0.5;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Agranda el elemento arrastrado */
 }
 
 #draggable-list li.over {
-    background-color: #0056b3;
+    background-color: #ff2200; /* Resalta cuando está sobre otra lista */
 }
 
-
-
-
-.container {
-}
-
-
-
+/* Drop zone for images */
 .drop-zone {
     width: 100%;
     height: 40px;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--secondary-color);
     margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
     transition: background-color 0.3s ease;
+
 }
 
 .drop-zone.hovered {
-    background-color: #e0f7fa;
-    border-color: #00bcd4;
-}
-
-.word-box {
-    margin-top: 20px;
+    background-color: #a9e4ec; /* Cambio de color al estar sobre la zona */
+    border-color: var(--highlight-color); /* Cambio de color del borde */
 }
 
 
-/*LISTA
-*/
-#draggable-list {
-    list-style: none;
-    padding: 0;
-}
 
-#draggable-list li {
-    padding: 10px;
-    margin: 5px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-#draggable-list li:hover {
-    background-color: #e0e0e0;
-}
-
+/* Invisible elements */
 .invisible {
-    display: none;
+    display: none; /* Oculta elementos invisibles */
 }
 
 
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .image-box {
+        width: 80%;
+        margin-bottom: 20px;
+    }
 
+    .encabezadoN2 h1 {
+        font-size: 2em;
+    }
+
+    .config, .casa {
+        font-size: 2em;
+    }
+}

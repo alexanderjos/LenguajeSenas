@@ -15,85 +15,69 @@
     <script defer src="/js/basedePreguntas.js"></script>
     <script defer src="/js/index.js"></script>
     <script defer src="/js/script.js"></script>
-    <title>Juego de Preguntas</title>
+    <title>Juego de Preguntas - Nivel 1</title>
 </head>
 
 <body class="nivel1">
     <div class="container">
-
-        <header>
-            <div class="container-fluid p-0">
-                <!-- Encabezado -->
-                <div class="row p-3 mb-3 align-items-center encabezadoN2">
-                    <div class="col-1 text-center">
-                        <a href="#" id="exitButton" class="text-white">
-                            <i class="fa-sharp fa-solid fa-house casa"></i>
-                        </a>
-                    </div>
-                    <div class="col-10 text-center">
-                        <h1> Nivel 1</h1>
-                    </div>
-                    
-                    <div class="col-1 text-center">
-                        <a href="#" class="text-white">
-                            <i class="fa-duotone fa-solid fa-gear config"></i>
-                        </a>
-                    </div>
+        <header class="mb-3">
+            <div class="row p-3 align-items-center encabezadoN2">
+                <div class="col-1 text-center">
+                    <a href="#" id="exitButton" class="text-white">
+                        <i class="fa-solid fa-house casa"></i>
+                    </a>
                 </div>
-
+                <div class="col-10 text-center">
+                    <h1>Nivel 1</h1>
+                </div>
+                <div class="col-1 text-center">
+                    <a href="#" class="text-white">
+                        <i class="fa-solid fa-gear config"></i>
+                    </a>
+                </div>
             </div>
-
         </header>
-        
 
-        <div class="content">
-        <!-- TARJETAS CON IMAGENES Y ZONA DE DROPEO  -->
-
-            <div class="images">
+        <main class="content">
+            <!-- Tarjetas con imágenes y zona de drop -->
+            <section class="images">
                 <div class="image-box">
                     <img src="../Imagenes/numeros_manos/mano_1.png" alt="Uno">
                     <div class="drop-zone"></div>
                 </div>
-
                 <div class="image-box">
                     <img src="../Imagenes/numeros_manos/mano_2.png" alt="Dos">
                     <div class="drop-zone"></div>
                 </div>
-
                 <div class="image-box">
                     <img src="../Imagenes/numeros_manos/mano_3.png" alt="Tres">
                     <div class="drop-zone"></div>
                 </div>
-
                 <div class="image-box">
                     <img src="../Imagenes/numeros_manos/mano_4.png" alt="Cuatro">
                     <div class="drop-zone"></div>
                 </div>
-
                 <div class="image-box">
                     <img src="../Imagenes/numeros_manos/mano_5.png" alt="Cinco">
                     <div class="drop-zone"></div>
                 </div>
-                
                 <div class="image-box">
                     <img src="../Imagenes/numeros_manos/mano_6.png" alt="Seis">
                     <div class="drop-zone"></div>
                 </div>
-
                 <div class="image-box">
                     <img src="../Imagenes/numeros_manos/mano_7.png" alt="Siete">
                     <div class="drop-zone"></div>
                 </div>
-                
                 <div class="image-box">
                     <img src="../Imagenes/numeros_manos/mano_8.png" alt="Ocho">
                     <div class="drop-zone"></div>
                 </div>
-            </div>
+            </section>
 
-            <!-- CAJON DE PALABRAS -->
-            <div class="word-box">
-                <h3>CAJÓN DE PALABRAS</h3>
+            <!-- Cajón de palabras -->
+            <section class="word-box">
+                <h3>CAJON DE PALABRAS</h3>
                 <ul id="draggable-list">
                     <li draggable="true">1. Uno</li>
                     <li draggable="true">2. Dos</li>
@@ -104,16 +88,10 @@
                     <li draggable="true">7. Siete</li>
                     <li draggable="true">8. Ocho</li>
                 </ul>
-            </div>
-        </div>
+            </section>
+        </main>
     </div>
-
     <script src="../js/nivel_1.js"></script>
-
 </body>
 
 </html>
-
-
-
-
