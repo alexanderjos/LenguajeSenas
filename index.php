@@ -1,114 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/master.css">
-    <script defer src="js/scripts1.js"></script>
-    <script defer src="js/register.js" type="module"></script>
-    <!-- <script src="js/iffe_login.js"></script> -->
-    <script defer src="js/login_modulo.js" type="module"></script>
-    <title>FORMULARIO DE REGISTRO E INICIO SESIÓN</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" type="text/css" href="css/login.css">
+   <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+   <script defer src="js/main.js"></script>
+   <script defer src="js/main2.js"></script>
+   <title>Inicio de sesión</title>
 </head>
+
 <body>
-    <div class="container-form register">
-        <div class="information">
-            <div class="info-childs">
-                <h2>Bienvenido</h2>
-                <p>Para unirte a nuestra comunidad por favor Inicia Sesión con tus datos</p>
-                <input type="button" value="Iniciar Sesión" id="sign-in">
+   <div class="container">
+      <div class="img">
+         <img src="Imagenes/logo.png">
+      </div>
+      <div class="login-content">
+         <form  method="post" autocomplete="off">
+            <img src="Imagenes/avatar.svg">
+            <h2 class="title">BIENVENIDO</h2>
+            <?php
+               include ("models/validar.php");
+               echo "<br>";
+            ?>
+
+            <div class="input-div one">
+               <div class="i">
+                  <i class="fas fa-user"></i>
+               </div>
+               <div class="div">
+                  <h5>Usuario</h5>
+                  <input id="usuario" type="text" class="input" name="usuario">
+               </div>
             </div>
-        </div>
-        <div class="form-information">
-            <div class="form-information-childs">
-                <h2>Crear una Cuenta</h2>
-                <div class="icons">
-                    <i class='bx bxl-google'></i>
-                    <i class='bx bxl-github'></i>
-                    <i class='bx bxl-linkedin' ></i>
-                </div>
-                <p>o usa tu email para registrarte</p>
-                <form class="form form-register" action="/php/register.php" method="post" novalidate>
-                    <div>
-                        <label>
-                            <i class='bx bx-user' ></i>
-                            <input type="text" placeholder="Nombre Usuario" name="userName" required>
-                        </label>
-                    </div>
-                    <div>
-                        <label >
-                            <i class='bx bx-envelope' ></i>
-                            <input type="email" placeholder="Correo Electronico" name="userEmail" required>
-                        </label>
-                    </div>
-                   <div>
-                        <label>
-                            <i class='bx bx-lock-alt' ></i>
-                            <input type="password" placeholder="Contraseña" name="userPassword" required>
-                        </label>
-                   </div>
-                   
-                    <input type="submit" value="Registrarse">
-                    <div class="alerta-error">Todos los campos son obligatorios</div>
-                    <div class="alerta-exito">Te registraste correctamente</div>
-                </form>
+            <div class="input-div pass">
+               <div class="i">
+                  <i class="fas fa-lock"></i>
+               </div>
+               <div class="div">
+                  <h5>Contraseña</h5>
+                  <input type="password" id="input" class="input" name="password">
+               </div>
             </div>
-        </div>
-    </div>
+            <div class="view">
+               <div class="fas fa-eye verPassword" onclick="vista()" id="verPassword"></div>
+            </div>
+            <div class="text-center">
+               <a class="font-italic rg" href="">¿No tienes Cuenta? Registrate</a>
+            </div>   
+            <input name="btningresar" class="btn" type="submit" value="INICIAR SESION">
+            
+         </form>
+      </div>
+   </div>
 
 
-    <div class="container-form login hide">
-        <div class="information">
-            <div class="info-childs">
-                <h2>¡¡Bienvenido nuevamente!!</h2>
-                <p>Para unirte a nuestra comunidad por favor Inicia Sesión con tus datos</p>
-                <input type="button" value="Registrarse" id="sign-up">
-            </div>
-        </div>
-        <div class="form-information">
-            <div class="form-information-childs">
-                <h2>Iniciar Sesión</h2>
-                <div class="icons">
-                    <i class='bx bxl-google'></i>
-                    <i class='bx bxl-github'></i>
-                    <i class='bx bxl-linkedin' ></i>
-                </div>
-                <p>o Iniciar Sesión con una cuenta</p>
-                <form class="form form-login" action="/php/login.php" method="post" novalidate>
-                    <div>
-                        <label >
-                            <i class='bx bx-envelope' ></i>
-                            <input type="email" placeholder="Correo Electronico" name="userEmail" required>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <i class='bx bx-lock-alt' ></i>
-                            <input type="password" placeholder="Contraseña" name="userPassword" required>
-                        </label>
-                    </div>
-                    <input type="submit" value="Iniciar Sesión">
-                    <div class="alerta-error">Todos los campos son obligatorios</div>
-                    <div class="alerta-exito">Iniciaste sesión correctamente</div>
-                </form>
-            </div>
-        </div>
-    </div>
+
 </body>
+
 </html>
-
-<!--Este es la tabla:
-
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
-);
-
--->
