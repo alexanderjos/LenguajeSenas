@@ -1,6 +1,12 @@
+// archivo: ../js/nivel_1.js
+
 // Selección de elementos de la lista y las zonas de caída
 const listItems = document.querySelectorAll('#draggable-list li');
 const dropZones = document.querySelectorAll('.drop-zone');
+const verifyButton = document.getElementById('verifyButton');
+
+// Contador para las posiciones correctas
+let correctPositions = 0;
 
 // Añadir los eventos de arrastrar a los elementos de la lista
 listItems.forEach(item => {
@@ -58,18 +64,33 @@ function dropItem(e) {
     }
 }
 
-// Permitir restaurar el elemento a la lista
-dropZones.forEach(zone => {
-    zone.addEventListener('dblclick', function(e) {
-        if (e.target.textContent.trim() !== '') {
-            const itemText = e.target.textContent.trim();
-            e.target.textContent = '';
+// Evento para verificar las posiciones al presionar el botón "VERIFICAR"
+verifyButton.addEventListener('click', () => {
+    correctPositions = 0;
 
-            // Restaurar el elemento a la lista
-            const listItem = Array.from(listItems).find(item => item.textContent.trim() === itemText);
-            if (listItem) {
-                listItem.style.display = ''; // Mostrar el elemento de nuevo
-            }
+    dropZones.forEach(zone => {
+        const droppedText = zone.textContent.trim();
+        const number = zone.previousElementSibling.alt;
+
+        if (droppedText.includes(number)) {
+            zone.style.backgroundColor = 'green';
+            correctPositions++;
+        } else {
+            zone.style.backgroundColor = 'red';
         }
     });
+
+    showScoreScreen(correctPositions, dropZones.length);
 });
+
+function showScoreScreen(correct, total) {
+    Swal.fire({
+        title: 'Resultado',
+        text: `Tu puntaje es: ${correct} de ${total}`,
+        icon: 'info',
+        confirmButtonText: 'Aceptar',
+    }).then(() => {
+        // Redirigir o mostrar una nueva pantalla, según tus necesidades
+        console.log('Puedes redirigir a otra pantalla aquí.');
+    });
+}
