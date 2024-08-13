@@ -8,18 +8,17 @@
    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
    <script defer src="js/main.js"></script>
-   <script defer src="js/main2.js"></script>
    <title>Inicio de sesión</title>
 </head>
 
 <body>
    <div class="container">
       <div class="img">
-         <img src="Imagenes/logo.png">
+         <img src="Imagenes/login/logo.png">
       </div>
       <div class="login-content">
          <form  method="post" autocomplete="off">
-            <img src="Imagenes/avatar.svg">
+            <img src="Imagenes/login/avatar.svg">
             <h2 class="title">BIENVENIDO</h2>
             <?php
                include ("models/validar.php");
@@ -48,7 +47,7 @@
                <div class="fas fa-eye verPassword" onclick="vista()" id="verPassword"></div>
             </div>
             <div class="text-center">
-               <a class="font-italic rg" href="">¿No tienes Cuenta? Registrate</a>
+               <a class="font-italic rg" href="Vista/registro.php">¿No tienes Cuenta? Registrate</a>
             </div>   
             <input name="btningresar" class="btn" type="submit" value="INICIAR SESION">
             

@@ -1,0 +1,127 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body{
+    background-image: url(../Imagenes/vector_mar.svg);
+}
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card {
+    border-radius: 20px;
+    padding: 10px;
+}
+.card-body h5{
+    font-size: 0.99em;
+    color: rgb(153, 151, 151);
+}
+a{
+    text-decoration: none;
+}
+/* Estilo para los botones de 'view' y 'calendar' */
+.view, .calendar {
+    color: rgb(73, 72, 72) !important; /* Forzar el color del texto predeterminado */
+    border-color: #17a2b8 !important; /* Forzar el color del borde predeterminado */
+    background-color: transparent !important; /* Fondo transparente para los botones */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s !important;
+}
+
+/* Estilo cuando el ratón pasa sobre el botón */
+.view:hover, .calendar:hover {
+    background-color: #00bfff !important; /* Forzar el color de fondo al pasar el ratón */
+    color: white !important; /* Forzar el color del texto al pasar el ratón */
+    border-color: #00bfff !important; /* Forzar el borde del botón al pasar el ratón */
+}
+
+/* Estilo cuando se hace clic en el botón y se mantiene presionado */
+.view:active, .calendar:active {
+    background-color: #00bfff !important; /* Forzar el mismo color que el hover al presionar */
+    color: white !important; /* Forzar que el texto permanezca blanco */
+    border-color: #00bfff !important; /* Forzar el mismo color de borde al presionar */
+}
+
+/* Estilo cuando el botón está en foco */
+.view:focus, .calendar:focus {
+    outline: none !important; /* Elimina el contorno predeterminado del botón en foco */
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 161, 0.5) !important; /* Sombra alrededor del botón */
+}
+
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 50%; /* Hacer la imagen redonda */
+    transition: border-color 0.3s ease;
+    margin: 0 20px; /* Espacio entre las imágenes de los avatares (reducido) */
+}
+.avatar-img.selected {
+    border-color: #00bfff; /* Borde celeste al seleccionar */
+}
+.avatar-input {
+    display: none;
+}
+/* Aumenta la especificidad si es necesario */
+button.bto, .bto.btn {
+    font-size: 1.1em;
+    font-weight: bolder;
+    font-style: italic;
+    background-color: #17a2b8; /* Color de fondo predeterminado */
+    color: white; /* Color del texto */
+    border: 1px solid #17a2b8; /* Borde del botón */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+button.bto:hover, .bto.btn:hover {
+    background-color: #138496; /* Color de fondo al pasar el ratón */
+    color: white; /* Color del texto al pasar el ratón */
+    border-color: #138496; /* Borde del botón al pasar el ratón */
+}
+
+button.bto:active, .bto.btn:active {
+    background-color: #117a8b; /* Color de fondo al hacer clic */
+    color: white; /* Asegura que el texto permanezca blanco */
+    border-color: #117a8b; /* Borde del botón al hacer clic */
+}
+
+.gender-button-group {
+    display: flex;
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
+    gap: 10px; /* Espacio entre los botones */
+}
+.gender-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px; /* Ajusta el padding para mejor alineación */
+    border: 2px solid #ced4da; /* Borde predeterminado */
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+.gender-button.selected {
+    background-color: #00bfff; /* Fondo celeste al seleccionar */
+    color: white; /* Texto blanco */
+    border-color: #00bfff; /* Borde celeste al seleccionar */
+}
+.gender-button i {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+.form-container {
+    width: 100%;
+    max-width: 700px; /* Ancho máximo del formulario */
+}
+.avatar-group {
+    display: flex;
+    justify-content: center; /* Centra los avatares horizontalmente */
+    flex-wrap: wrap; /* Permite que los avatares se ajusten a la línea siguiente si es necesario */
+}
+#errorContrasena{
+    color: red;
+    font-style: italic;
+}

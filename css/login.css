@@ -24,7 +24,7 @@ body{
     grid-template-columns: repeat(2, 1fr);
     grid-gap :7rem;
     padding: 0 2rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.062)), url("../Imagenes/portada.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.062)), url("../Imagenes/login/portada.png");
 
     background-repeat: no-repeat;
     background-size: 100% 100%;
