@@ -60,3 +60,24 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.classList.toggle('fa-eye-slash');
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Selecciona los elementos del DOM
+    const contrasenaInput = document.getElementById('password');
+    const confirmarContrasenaInput = document.getElementById('password-confirm');
+    const errorContrasena = document.getElementById('errorContrasena');
+
+    // Función para validar que las contraseñas coincidan
+    function validarContrasenas() {
+        if (contrasenaInput.value === confirmarContrasenaInput.value) {
+            // Si las contraseñas coinciden, borra el mensaje de error
+            errorContrasena.textContent = '';
+        } else {
+            // Si las contraseñas no coinciden, muestra un mensaje de error
+            errorContrasena.textContent = 'Las contraseñas no coinciden.';
+        }
+    }
+    // Añade un escuchador de eventos para cuando el usuario escribe en el campo de confirmar contraseña
+    confirmarContrasenaInput.addEventListener('input', validarContrasenas);
+});

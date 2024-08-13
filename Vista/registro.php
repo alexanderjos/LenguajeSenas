@@ -26,29 +26,32 @@
                     <form>
                         <div class="mb-3">
                             <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required autocomplete="name">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="ejemplo@dominio.com" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@dominio.com" required autocomplete="email">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Contraseña</label>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="password" required>
+                                <input type="password" class="form-control" id="password" name="password" required autocomplete="new-password">
                                 <button class="view btn btn-outline-secondary" type="button" id="toggle-password">
                                     <i class="fa-solid fa-eye"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-1">
                             <label for="password-confirm" class="form-label">Repetir contraseña</label>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="password-confirm" required>
-                                <button class=" view btn btn-outline-secondary" type="button" id="toggle-password-confirm">
+                                <input type="password" class="form-control" id="password-confirm" name="password-confirm" required autocomplete="new-password">
+                                <button class="view btn btn-outline-secondary" type="button" id="toggle-password-confirm">
                                     <i class="fa-solid fa-eye"></i>
                                 </button>
                             </div>
+                        </div>
+                        <div class="mb-2">
+                            <span id="errorContrasena"></span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Género</label>
@@ -64,10 +67,12 @@
                                 </label>
                             </div>
                         </div>
+
+
                         <div class="mb-3">
-                            <label for="birthdate" class="form-label">Fecha de nacimiento</label>
+                            <label  class="form-label">Fecha de nacimiento</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="birthdate" required>
+                                <input type="text" class="form-control" name="birthdate" id="birthdate" required autocomplete="bday">
                                 <button class="btn btn-outline-secondary calendar" type="button" id="calendar-button">
                                     <i class="fa-solid fa-calendar"></i>
                                 </button>
@@ -76,17 +81,25 @@
                         <div class="mb-3">
                             <label class="form-label">Avatar</label>
                             <div class="avatar-group">
-                                <input type="radio" name="avatar" id="avatar1" value="avatar1" class="avatar-input">
-                                <img src="../Imagenes/avatares/avatar1.jpg" alt="Avatar 1" class="avatar-img" onclick="selectAvatar(this)">
+                                <input type="radio" name="avatar" id="avatar1" value="avatar1" class="avatar-input" required>
+                                <label for="avatar1" class="avatar-label">
+                                    <img src="../Imagenes/avatares/avatar1.jpg" alt="Avatar 1" class="avatar-img">
+                                </label>
 
-                                <input type="radio" name="avatar" id="avatar2" value="avatar2" class="avatar-input">
-                                <img src="../Imagenes/avatares/avatar2.jpg" alt="Avatar 2" class="avatar-img" onclick="selectAvatar(this)">
+                                <input type="radio" name="avatar" id="avatar2" value="avatar2" class="avatar-input" required>
+                                <label for="avatar2" class="avatar-label">
+                                    <img src="../Imagenes/avatares/avatar2.jpg" alt="Avatar 2" class="avatar-img">
+                                </label>
 
-                                <input type="radio" name="avatar" id="avatar3" value="avatar3" class="avatar-input">
-                                <img src="../Imagenes/avatares/avatar3.jpg" alt="Avatar 3" class="avatar-img" onclick="selectAvatar(this)">
+                                <input type="radio" name="avatar" id="avatar3" value="avatar3" class="avatar-input" required>
+                                <label for="avatar3" class="avatar-label">
+                                    <img src="../Imagenes/avatares/avatar3.jpg" alt="Avatar 3" class="avatar-img">
+                                </label>
 
-                                <input type="radio" name="avatar" id="avatar4" value="avatar4" class="avatar-input">
-                                <img src="../Imagenes/avatares/avatar4.jpg" alt="Avatar 4" class="avatar-img" onclick="selectAvatar(this)">
+                                <input type="radio" name="avatar" id="avatar4" value="avatar4" class="avatar-input" required>
+                                <label for="avatar4" class="avatar-label">
+                                    <img src="../Imagenes/avatares/avatar4.jpg" alt="Avatar 4" class="avatar-img">
+                                </label>
                             </div>
                         </div>
                         <button type="submit" class="bto btn btn-info w-100">Registrarse</button>

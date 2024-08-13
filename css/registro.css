@@ -121,3 +121,7 @@ button.bto:active, .bto.btn:active {
     justify-content: center; /* Centra los avatares horizontalmente */
     flex-wrap: wrap; /* Permite que los avatares se ajusten a la línea siguiente si es necesario */
 }
+#errorContrasena{
+    color: red;
+    font-style: italic;
+}
