@@ -47,7 +47,7 @@
                <div class="fas fa-eye verPassword" onclick="vista()" id="verPassword"></div>
             </div>
             <div class="text-center">
-               <a class="font-italic rg" href="vista/registro.php">¿No tienes Cuenta? Registrate</a>
+               <a class="font-italic rg" href="/vista/registro.php">¿No tienes Cuenta? Registrate</a>
             </div>   
             <input name="btningresar" class="btn" type="submit" value="INICIAR SESION">
             
