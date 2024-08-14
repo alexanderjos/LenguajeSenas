@@ -1,5 +1,3 @@
-// archivo: ../js/nivel_1.js
-
 // Selección de elementos de la lista y las zonas de caída
 const listItems = document.querySelectorAll('#draggable-list li');
 const dropZones = document.querySelectorAll('.drop-zone');
@@ -32,6 +30,8 @@ dropZones.forEach(zone => {
     zone.addEventListener('dragover', dragOver);
     zone.addEventListener('drop', dropItem);
     zone.addEventListener('dragleave', dragLeave);
+    // Añadir un evento para hacer clic en la zona de caída y devolver el elemento
+    zone.addEventListener('click', returnToOriginalList);
 });
 
 function dragOver(e) {
@@ -64,19 +64,55 @@ function dropItem(e) {
     }
 }
 
-// Evento para verificar las posiciones al presionar el botón "VERIFICAR"
+function showSuccessMessage() {
+    Swal.fire({
+        icon: 'success',
+        title: '¡Bien hecho!',
+        text: 'Todos los ítems están en la posición correcta.',
+        confirmButtonText: 'OK'
+    });
+}
+
+function returnToOriginalList(e) {
+    const droppedText = e.target.textContent.trim();
+
+    // Verificar si la zona de caída tiene un elemento para devolver
+    if (droppedText !== '') {
+        // Encontrar el ítem original en la lista
+        const listItem = Array.from(listItems).find(item => item.textContent.trim() === droppedText);
+
+        if (listItem) {
+            // Hacer que el ítem sea visible nuevamente en la lista
+            listItem.style.display = 'list-item';
+
+            // Limpiar la zona de caída
+            e.target.textContent = '';
+
+            // Disminuir el contador de posiciones correctas si el elemento estaba en la posición correcta
+            const number = e.target.previousElementSibling.alt; // El número de la imagen
+            if (droppedText.includes(number)) {
+                correctPositions--;
+            }
+        }
+    }
+}
+
+
+
+//  Evento para verificar las posiciones al presionar el botón "VERIFICAR"
 verifyButton.addEventListener('click', () => {
     correctPositions = 0;
 
     dropZones.forEach(zone => {
         const droppedText = zone.textContent.trim();
         const number = zone.previousElementSibling.alt;
+        const imageBox = zone.parentElement; // Selecciona el contenedor 'image-box'
 
         if (droppedText.includes(number)) {
-            zone.style.backgroundColor = 'green';
+            imageBox.style.backgroundColor = 'green';
             correctPositions++;
         } else {
-            zone.style.backgroundColor = 'red';
+            imageBox.style.backgroundColor = 'red';
         }
     });
 
@@ -90,7 +126,7 @@ function showScoreScreen(correct, total) {
         icon: 'info',
         confirmButtonText: 'Aceptar',
     }).then(() => {
-        // Redirigir o mostrar una nueva pantalla, según tus necesidades
-        console.log('Puedes redirigir a otra pantalla aquí.');
+        // Recargar la página para reiniciar el juego
+        location.reload();
     });
 }
