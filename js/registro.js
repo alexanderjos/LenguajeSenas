@@ -1,25 +1,35 @@
-document.querySelectorAll('.btn-check').forEach(radio => {
-    radio.addEventListener('change', function() {
-        document.querySelectorAll('.gender-button').forEach(button => button.classList.remove('selected'));
-        if (this.checked) {
-            document.querySelector(`label[for=${this.id}]`).classList.add('selected');
-        }
-    });
-});
-
-function selectAvatar(imgElement) {
-    // Quitar la clase 'selected' de todas las imágenes
-    document.querySelectorAll('.avatar-img').forEach(img => img.classList.remove('selected'));
-
-    // Añadir la clase 'selected' a la imagen seleccionada
-    imgElement.classList.add('selected');
-
-    // Seleccionar el input radio correspondiente
-    const avatarId = imgElement.alt.replace('Avatar ', 'avatar');
-    document.getElementById(avatarId).checked = true;
-}
-
 document.addEventListener('DOMContentLoaded', function() {
+    // Selección de género
+    document.querySelectorAll('.btn-check').forEach(radio => {
+        radio.addEventListener('change', function() {
+            document.querySelectorAll('.gender-button').forEach(button => button.classList.remove('selected'));
+            if (this.checked) {
+                document.querySelector(`label[for=${this.id}]`).classList.add('selected');
+            }
+        });
+    });
+
+    // Selección de avatar
+    function selectAvatar(imgElement) {
+        // Quitar la clase 'selected' de todas las imágenes
+        document.querySelectorAll('.avatar-img').forEach(img => img.classList.remove('selected'));
+
+        // Añadir la clase 'selected' a la imagen seleccionada
+        imgElement.classList.add('selected');
+
+        // Seleccionar el input radio correspondiente
+        const avatarId = imgElement.alt.replace('Avatar ', 'avatar');
+        document.getElementById(avatarId).checked = true;
+    }
+
+    // Añadir evento a todas las imágenes de avatares para seleccionarlos cuando se hace clic
+    document.querySelectorAll('.avatar-img').forEach(img => {
+        img.addEventListener('click', function() {
+            selectAvatar(this);
+        });
+    });
+
+    // Configuración del calendario
     const calendar = flatpickr("#birthdate", {
         dateFormat: "Y-m-d",
         maxDate: "today",
@@ -32,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         calendar.open(); // Abrir el calendario al hacer clic en el botón
     });
 
+    // Alternar la visibilidad de la contraseña
     const togglePassword = document.querySelector('#toggle-password');
     const passwordField = document.querySelector('#password');
 
@@ -46,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.classList.toggle('fa-eye-slash');
     });
 
+    // Alternar la visibilidad de la confirmación de contraseña
     const togglePasswordConfirm = document.querySelector('#toggle-password-confirm');
     const passwordConfirmField = document.querySelector('#password-confirm');
 
@@ -59,16 +71,12 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.classList.toggle('fa-eye');
         icon.classList.toggle('fa-eye-slash');
     });
-});
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Selecciona los elementos del DOM
+    // Validación de contraseñas
     const contrasenaInput = document.getElementById('password');
     const confirmarContrasenaInput = document.getElementById('password-confirm');
     const errorContrasena = document.getElementById('errorContrasena');
 
-    // Función para validar que las contraseñas coincidan
     function validarContrasenas() {
         if (contrasenaInput.value === confirmarContrasenaInput.value) {
             // Si las contraseñas coinciden, borra el mensaje de error
@@ -78,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             errorContrasena.textContent = 'Las contraseñas no coinciden.';
         }
     }
+
     // Añade un escuchador de eventos para cuando el usuario escribe en el campo de confirmar contraseña
     confirmarContrasenaInput.addEventListener('input', validarContrasenas);
 });

@@ -29,6 +29,10 @@
                             <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required autocomplete="name">
                         </div>
                         <div class="mb-3">
+                            <label for="nickname" class="form-label">Nickname</label>
+                            <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Ingresa tu nickname" required autocomplete="nickname">
+                        </div>
+                        <div class="mb-3">
                             <label for="email" class="form-label">Correo electrónico</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@dominio.com" required autocomplete="email">
                         </div>
@@ -83,25 +87,26 @@
                             <div class="avatar-group">
                                 <input type="radio" name="avatar" id="avatar1" value="avatar1" class="avatar-input" required>
                                 <label for="avatar1" class="avatar-label">
-                                    <img src="../Imagenes/avatares/avatar1.jpg" alt="Avatar 1" class="avatar-img">
+                                    <img src="../Imagenes/avatares/avatar1.jpg" alt="Avatar 1" class="avatar-img" onclick="selectAvatar(this)">
                                 </label>
 
                                 <input type="radio" name="avatar" id="avatar2" value="avatar2" class="avatar-input" required>
                                 <label for="avatar2" class="avatar-label">
-                                    <img src="../Imagenes/avatares/avatar2.jpg" alt="Avatar 2" class="avatar-img">
+                                    <img src="../Imagenes/avatares/avatar2.jpg" alt="Avatar 2" class="avatar-img" onclick="selectAvatar(this)">
                                 </label>
 
                                 <input type="radio" name="avatar" id="avatar3" value="avatar3" class="avatar-input" required>
                                 <label for="avatar3" class="avatar-label">
-                                    <img src="../Imagenes/avatares/avatar3.jpg" alt="Avatar 3" class="avatar-img">
+                                    <img src="../Imagenes/avatares/avatar3.jpg" alt="Avatar 3" class="avatar-img" onclick="selectAvatar(this)">
                                 </label>
 
                                 <input type="radio" name="avatar" id="avatar4" value="avatar4" class="avatar-input" required>
                                 <label for="avatar4" class="avatar-label">
-                                    <img src="../Imagenes/avatares/avatar4.jpg" alt="Avatar 4" class="avatar-img">
+                                    <img src="../Imagenes/avatares/avatar4.jpg" alt="Avatar 4" class="avatar-img" onclick="selectAvatar(this)">
                                 </label>
                             </div>
                         </div>
+
                         <button type="submit" class="bto btn btn-info w-100">Registrarse</button>
                     </form>
                 </div>
