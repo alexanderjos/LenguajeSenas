@@ -1,39 +1,72 @@
-const cache = new Map();
-
-document.getElementById('nickname').addEventListener('blur', async function() {
+document.getElementById('nickname').addEventListener('blur', function() {
     const nombre = this.value;
-
-    if (cache.has(nombre)) {
-        const data = cache.get(nombre);
-        const errorNickname = document.getElementById('errorNick');
-        if (data.existe) {
-            errorNickname.textContent = 'Nickname no disponible pudes usar números';
-        } else {
-            errorNickname.textContent = '';
+    const errorNickname = document.getElementById('errorNick');
+    fetch('../controllers/validar.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `nickname=${encodeURIComponent(nombre)}`,
+    })
+    .then(response => response.text())  // Cambia a `text()` para ver el contenido
+    .then(text => {
+        try {
+            const data = JSON.parse(text);  // Intenta parsear el texto a JSON
+            if (data.existe) {
+                
+                errorNickname.textContent = 'Nickname no disponible pudes usar números';
+            } else {
+                errorNickname.textContent = '';
+            }
+        } catch (e) {
+            console.error('Error al parsear JSON:', e);
         }
-        return;
+    })
+    .catch(error => console.error('Error:', error));
+});
+
+
+function validarSeleccionAvatar() {
+    // Busca el radio button que está marcado
+    const avatarSeleccionado = document.querySelector('input[name="avatar"]:checked');
+    
+    if (!avatarSeleccionado) {
+        return false; // Evita que el formulario se envíe o que se realice la acción
     }
 
-    try {
-        const response = await fetch('../controllers/validar.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `nickname=${encodeURIComponent(nombre)}`,
-        });
+    // Si hay un avatar seleccionado, permite continuar
+    return true;
+}
 
-        const text = await response.text();
-        const data = JSON.parse(text);
+// validaciones.js
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const errorNick = document.getElementById('errorNick');
+    const errorContrasena = document.getElementById('errorContrasena');
+    const errorAvatar = document.getElementById('errorAvatar');
+    
 
-        cache.set(nombre, data);
-        const errorNickname = document.getElementById('errorNick');
-        if (data.existe) {
-            errorNickname.textContent = 'Nickname no disponible pudes usar números';
-        } else {
-            errorNickname.textContent = '';
+    form.addEventListener('submit', function (event) {
+        let hasErrors = false;
+
+        // Verificar si hay errores visibles
+        if (errorNick.textContent !== '' || errorContrasena.textContent !== '') {
+
+            hasErrors = true;
         }
-    } catch (e) {
-        console.error('Error:', e);
-    }
+        if(!validarSeleccionAvatar()){
+            hasErrors = true;
+            errorAvatar.textContent= 'Porfavor seleccione un avatar';
+
+        }else{
+            errorAvatar.textContent= '';
+        }
+        // Evitar el envío del formulario si hay errores
+        if (hasErrors) {
+            event.preventDefault();
+            document.getElementById('venError').style.display="block";
+        }else{
+            document.getElementById('venSuccess').style.display = "block";
+        }
+    });
 });
