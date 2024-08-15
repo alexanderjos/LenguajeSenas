@@ -11,13 +11,13 @@ class Conectar {
         $user = $_ENV['DB_USER'];
         $pass = $_ENV['DB_PASS'];
 
-        $conexion = new mysqli($host, $user,$pass, $db);
-        if($conexion->connect_errno){
-            die("Error inesperado en la conexión a base de datos: ". $conexion->connect_errno);
-        }else{
-            return $conexion; 
+        $conexion = new mysqli($host, $user, $pass, $db);
+        if ($conexion->connect_errno) {
+            // Lanzar una excepción en lugar de usar die()
+            throw new Exception("Error inesperado en la conexión a base de datos: " . $conexion->connect_error);
+        } else {
+            return $conexion;
         }
     }
 }
 ?>
-
