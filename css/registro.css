@@ -22,8 +22,8 @@ body{
 a{
     text-decoration: none;
 }
-/* Estilo para los botones de 'view' y 'calendar' */
-.view, .calendar {
+/* Estilo para los botones de 'view' */
+.view {
     color: rgb(73, 72, 72) !important; /* Forzar el color del texto predeterminado */
     border-color: #17a2b8 !important; /* Forzar el color del borde predeterminado */
     background-color: transparent !important; /* Fondo transparente para los botones */
@@ -31,21 +31,21 @@ a{
 }
 
 /* Estilo cuando el ratón pasa sobre el botón */
-.view:hover, .calendar:hover {
+.view:hover{
     background-color: #00bfff !important; /* Forzar el color de fondo al pasar el ratón */
     color: white !important; /* Forzar el color del texto al pasar el ratón */
     border-color: #00bfff !important; /* Forzar el borde del botón al pasar el ratón */
 }
 
 /* Estilo cuando se hace clic en el botón y se mantiene presionado */
-.view:active, .calendar:active {
+.view:active{
     background-color: #00bfff !important; /* Forzar el mismo color que el hover al presionar */
     color: white !important; /* Forzar que el texto permanezca blanco */
     border-color: #00bfff !important; /* Forzar el mismo color de borde al presionar */
 }
 
 /* Estilo cuando el botón está en foco */
-.view:focus, .calendar:focus {
+.view:focus{
     outline: none !important; /* Elimina el contorno predeterminado del botón en foco */
     box-shadow: 0 0 0 0.2rem rgba(38, 143, 161, 0.5) !important; /* Sombra alrededor del botón */
 }
@@ -121,7 +121,25 @@ button.bto:active, .bto.btn:active {
     justify-content: center; /* Centra los avatares horizontalmente */
     flex-wrap: wrap; /* Permite que los avatares se ajusten a la línea siguiente si es necesario */
 }
-#errorContrasena{
+.error{
     color: red;
     font-style: italic;
+}
+
+#venError{
+    display: none ;
+}
+.pikaday {
+    z-index: 1050 !important; /* Asegúrate de que el calendario esté encima de otros elementos */
+}
+.input-group .input-group-text {
+    background: #fff; /* Fondo blanco para el ícono */
+    border: 1px solid #ced4da; /* Borde similar al campo de entrada */
+    cursor: pointer;
+}
+.input-group .input-group-text i {
+    color: #6c757d; /* Color gris claro para el ícono */
+}
+.input-group .input-group-text:focus {
+    box-shadow: none; /* Eliminar el sombreado al enfocar */
 }

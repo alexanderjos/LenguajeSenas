@@ -5,7 +5,7 @@
 function validarControlador($controlador) {
     $nombreControlador = $controlador;
    
-    $fileControlador = "controllers/" . $nombreControlador . ".php";
+    $fileControlador = "../controllers/" . $nombreControlador . ".php";
 
     if (!is_file($fileControlador)) {
         return "";

@@ -5,13 +5,14 @@ class RegistrosModel {
     protected $usuario;
 
     public function __construct() {
-        $this->db = Conectar::Conectar();  // Asegúrate de que este método exista en la clase Conectar
+        $this->db = Conectar::getConexion();  // Asegúrate de que este método exista en la clase Conectar
         $this->usuario = array();
     }
     public function save($data)
     {
-        $sql = "INSERT INTO usuarios (name, email, password) 
-            VALUES ('" . $data["User"] . "','" . $data["Email"] . "' , '" . $data["Pass"] . "')";
+        $sql = "INSERT INTO usuarios (name,nickname, email, password,genero,fechaNac,URLFotoPerfil) 
+            VALUES ('" . $data["usuario"] . "','" . $data["nickname"] . "' ,'" . $data["email"] . "'
+            , '" . $data["password"] . "' ,'" . $data["genero"] . "' ,'" . $data["fechaNac"] . "' ,'" . $data["avatar"] . "')";
         $this->db->query($sql);
     }
 

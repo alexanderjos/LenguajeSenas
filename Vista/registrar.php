@@ -1,9 +1,9 @@
 <?php
 // index.php
 date_default_timezone_set("America/Lima");
-require_once "config/database.php";
-require_once "config/config.php";
-require_once "routes/routes.php";
+require_once "../config/database.php";
+require_once "../config/config.php";
+require_once "../routes/routes.php";
 
 if (isset($_GET["c"])) {
     $controlador = validarControlador($_GET["c"]);

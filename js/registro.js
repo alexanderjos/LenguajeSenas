@@ -1,3 +1,22 @@
+// Define la función selectAvatar globalmente
+function selectAvatar(imgElement) {
+    // Quitar la clase 'selected' de todas las imágenes
+    document.querySelectorAll('.avatar-img').forEach(img => img.classList.remove('selected'));
+
+    // Añadir la clase 'selected' a la imagen seleccionada
+    imgElement.classList.add('selected');
+
+    // Seleccionar el input radio correspondiente usando el atributo data-avatar-id
+    const avatarId = imgElement.getAttribute('data-avatar-id');
+    const radioInput = document.getElementById(avatarId);
+
+    if (radioInput) {
+        radioInput.checked = true;
+    } else {
+        console.error(`No se encontró el input radio con ID: ${avatarId}`);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Selección de género
     document.querySelectorAll('.btn-check').forEach(radio => {
@@ -10,36 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Selección de avatar
-    function selectAvatar(imgElement) {
-        // Quitar la clase 'selected' de todas las imágenes
-        document.querySelectorAll('.avatar-img').forEach(img => img.classList.remove('selected'));
-
-        // Añadir la clase 'selected' a la imagen seleccionada
-        imgElement.classList.add('selected');
-
-        // Seleccionar el input radio correspondiente
-        const avatarId = imgElement.alt.replace('Avatar ', 'avatar');
-        document.getElementById(avatarId).checked = true;
-    }
-
     // Añadir evento a todas las imágenes de avatares para seleccionarlos cuando se hace clic
     document.querySelectorAll('.avatar-img').forEach(img => {
         img.addEventListener('click', function() {
-            selectAvatar(this);
+            selectAvatar(this); // Llama a la función global
         });
-    });
-
-    // Configuración del calendario
-    const calendar = flatpickr("#birthdate", {
-        dateFormat: "Y-m-d",
-        maxDate: "today",
-        minDate: "1900-01-01",
-        clickOpens: false // Evitar que el calendario se abra al hacer clic en el campo de texto
-    });
-
-    const calendarButton = document.querySelector('#calendar-button');
-    calendarButton.addEventListener('click', function() {
-        calendar.open(); // Abrir el calendario al hacer clic en el botón
     });
 
     // Alternar la visibilidad de la contraseña
@@ -78,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorContrasena = document.getElementById('errorContrasena');
 
     function validarContrasenas() {
-        if (contrasenaInput.value === confirmarContrasenaInput.value) {
-            // Si las contraseñas coinciden, borra el mensaje de error
+        if (contrasenaInput.value === confirmarContrasenaInput.value || confirmarContrasenaInput.value === '') {
+            // Si las contraseñas coinciden o el campo de confirmación está vacío, borra el mensaje de error
             errorContrasena.textContent = '';
         } else {
             // Si las contraseñas no coinciden, muestra un mensaje de error
@@ -87,6 +81,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Añade un escuchador de eventos para cuando el usuario escribe en el campo de confirmar contraseña
+    // Añade un escuchador de eventos para cuando el usuario escribe en el campo de la contraseña
+    contrasenaInput.addEventListener('input', validarContrasenas);
+    // Añade un escuchador de eventos para cuando el usuario escribe en el campo de confirmación de contraseña
     confirmarContrasenaInput.addEventListener('input', validarContrasenas);
+     // Inicializar Pikaday
+     var picker = new Pikaday({
+        field: document.getElementById('birthdate'),
+        format: 'YYYY-MM-DD',
+        minDate: new Date(1900, 0, 1),
+        maxDate: new Date(),
+        yearRange: [1900, 2024],
+        theme: 'dark-theme'
+    });
+
+    // Abrir Pikaday al hacer clic en el ícono del calendario
+    document.getElementById('calendar-icon').addEventListener('click', function() {
+        picker.show();
+    });
 });
