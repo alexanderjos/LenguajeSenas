@@ -50,8 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
         let hasErrors = false;
 
         // Verificar si hay errores visibles
-        if (errorNick.textContent !== '' || errorContrasena.textContent !== '') {
+        if (errorNick.textContent !== '') {
 
+            hasErrors = true;
+        }
+        if( errorContrasena.textContent !== ''){
             hasErrors = true;
         }
         if(!validarSeleccionAvatar()){
