@@ -1,4 +1,5 @@
 <?php
+ob_start(); // Inicia el buffer de salida
 // controllers/registrosController.php
 class registrosController{
     protected $registros;
@@ -25,9 +26,11 @@ class registrosController{
             "avatar" => $avatar
         );
         $this->registros->save($data);
-        $ventana['success']= "block";
-        header("location:../Vista/registro.php");
+        $ventana['success'] = "block";
+        header("Location: ../Vista/registro.php");
+        exit(); // Es una buena práctica llamar a exit después de redirigir
     }
 
 }
+ob_end_flush(); // Envía el buffer de salida
 ?>
