@@ -11,7 +11,7 @@ if (isset($_POST['nickname'])) {
 
     if ($conexion) {
         // Preparar la consulta
-        $sql = "SELECT * FROM usuarios WHERE name = ?";
+        $sql = "SELECT * FROM vista_nicknames WHERE nickname = ?";
         $stmt = $conexion->prepare($sql);
 
         if ($stmt) {

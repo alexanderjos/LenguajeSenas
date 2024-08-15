@@ -19,5 +19,6 @@ class Conectar {
             return $conexion;
         }
     }
+    
 }
 ?>
