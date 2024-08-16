@@ -24,7 +24,6 @@
                include("controllers/login.php");
                echo "<br>";
             ?>
-
             <div class="input-div one">
                <div class="i">
                   <i class="fas fa-user"></i>
