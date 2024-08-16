@@ -1,3 +1,8 @@
+<?php
+// Inicia el buffer de salida
+ob_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,8 +26,9 @@
             <img src="Imagenes/login/avatar.svg" alt="Avatar">
             <h2 class="title">BIENVENIDO</h2>
             <?php
-               include("controllers/login.php");
-               echo "<br>";
+               if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                   include("controllers/login.php");
+               }
             ?>
             <div class="input-div one">
                <div class="i">
@@ -54,3 +60,8 @@
    </div>
 </body>
 </html>
+
+<?php
+// Finaliza el buffer de salida
+ob_end_flush();
+?>
