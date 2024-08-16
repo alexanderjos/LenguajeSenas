@@ -21,7 +21,7 @@
             <img src="Imagenes/login/avatar.svg">
             <h2 class="title">BIENVENIDO</h2>
             <?php
-               include ("models/validar.php");
+               include ("controllers/login.php");
                echo "<br>";
             ?>
 
@@ -30,8 +30,8 @@
                   <i class="fas fa-user"></i>
                </div>
                <div class="div">
-                  <h5>Usuario</h5>
-                  <input id="usuario" type="text" class="input" name="usuario">
+                  <h5>Nickname</h5>
+                  <input id="Nickname" type="text" class="input" name="Nickname">
                </div>
             </div>
             <div class="input-div pass">
