@@ -1,6 +1,6 @@
 <?php 
+ob_start(); // Inicia el buffer de salida
 require __DIR__ . '/../config/database.php';
-session_start();
 $conexion = Conectar::getConexion();
 
 if (!empty($_POST["btningresar"])) {
@@ -14,11 +14,13 @@ if (!empty($_POST["btningresar"])) {
         $fila = mysqli_num_rows($resultado); 
 
         if ($fila) {
-            header("Location: ../Vista/juego.php");
+            header("Location: Vista/juego.php");
             exit();
         } else {
             echo '<div>Usuario o Contraseña incorrecta</div>';
         }
     }
 }
+ob_end_flush(); // Envía el buffer de salida
+
 ?>
