@@ -1,4 +1,4 @@
-<?php 
+<?php
 ob_start(); // Inicia el buffer de salida
 require __DIR__ . '/../config/database.php';
 $conexion = Conectar::getConexion();
@@ -22,5 +22,4 @@ if (!empty($_POST["btningresar"])) {
     }
 }
 ob_end_flush(); // Envía el buffer de salida
-
 ?>

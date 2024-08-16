@@ -14,14 +14,14 @@
 <body>
    <div class="container">
       <div class="img">
-         <img src="Imagenes/login/logo.png">
+         <img src="Imagenes/login/logo.png" alt="Logo">
       </div>
       <div class="login-content">
-         <form  method="post" autocomplete="off">
-            <img src="Imagenes/login/avatar.svg">
+         <form method="post" autocomplete="off">
+            <img src="Imagenes/login/avatar.svg" alt="Avatar">
             <h2 class="title">BIENVENIDO</h2>
             <?php
-               include ("controllers/login.php");
+               include("controllers/login.php");
                echo "<br>";
             ?>
 
@@ -31,7 +31,7 @@
                </div>
                <div class="div">
                   <h5>Nickname</h5>
-                  <input id="Nickname" type="text" class="input" name="Nickname">
+                  <input id="Nickname" type="text" class="input" name="Nickname" required>
                </div>
             </div>
             <div class="input-div pass">
@@ -40,23 +40,18 @@
                </div>
                <div class="div">
                   <h5>Contraseña</h5>
-                  <input type="password" id="input" class="input" name="password">
+                  <input type="password" id="input" class="input" name="password" required>
                </div>
             </div>
             <div class="view">
                <div class="fas fa-eye verPassword" onclick="vista()" id="verPassword"></div>
             </div>
             <div class="text-center">
-               <a class="font-italic rg" href="Vista/registro.php">¿No tienes Cuenta? Registrate</a>
+               <a class="font-italic rg" href="Vista/registro.php">¿No tienes cuenta? Regístrate</a>
             </div>   
-            <input name="btningresar" class="btn" type="submit" value="INICIAR SESION">
-            
+            <input name="btningresar" class="btn" type="submit" value="INICIAR SESIÓN">
          </form>
       </div>
    </div>
-
-
-
 </body>
-
 </html>
