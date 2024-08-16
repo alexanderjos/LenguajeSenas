@@ -52,9 +52,12 @@
                         <div class="mb-2">
                             <span class="error" id="errorNick"></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-1">
                             <label for="email" class="form-label">Correo electrónico</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@dominio.com" required>
+                        </div>
+                        <div class="mb-2">
+                            <span class="error" id="errorCorreo"></span>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Contraseña</label>

@@ -24,6 +24,32 @@ document.getElementById('nickname').addEventListener('blur', function() {
     })
     .catch(error => console.error('Error:', error));
 });
+document.getElementById('email').addEventListener('blur', function() {
+    const email = this.value;
+    const errorCorreo = document.getElementById('errorCorreo');
+    fetch('../controllers/validarcorreo.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `email=${encodeURIComponent(email)}`,
+    })
+    .then(response => response.text())  // Cambia a `text()` para ver el contenido
+    .then(text => {
+        try {
+            const data = JSON.parse(text);  // Intenta parsear el texto a JSON
+            if (data.existe) {
+                
+                errorCorreo.textContent = 'Ya tiene una cuenta con este correo';
+            } else {
+                errorCorreo.textContent = '';
+            }
+        } catch (e) {
+            console.error('Error al parsear JSON:', e);
+        }
+    })
+    .catch(error => console.error('Error:', error));
+});
 
 
 function validarSeleccionAvatar() {
@@ -44,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const errorNick = document.getElementById('errorNick');
     const errorContrasena = document.getElementById('errorContrasena');
     const errorAvatar = document.getElementById('errorAvatar');
-    
+    const errorCorreo = document.getElementById('errorCorreo');
 
     form.addEventListener('submit', function (event) {
         let hasErrors = false;
@@ -52,6 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Verificar si hay errores visibles
         if (errorNick.textContent !== '') {
 
+            hasErrors = true;
+        }
+        if(errorCorreo.textContent !== ''){
             hasErrors = true;
         }
         if( errorContrasena.textContent !== ''){
