@@ -105,7 +105,7 @@
     border-radius: 50%;
     border: none;
     background: linear-gradient(145deg, #f7eb00, #fff200);
-    background-image: url('../Imagenes/nivel-uno-svg.svg'); /* Ruta de la imagen de fondo */
+    background-image: url('../Imagenes/juego/nivel-uno-svg.svg'); /* Ruta de la imagen de fondo */
 
     background-size: cover; /* Cambia el tamaño de la imagen para cubrir todo el botón */
 
@@ -157,7 +157,7 @@
     border-radius: 50%;
     border: none;
     background: linear-gradient(145deg, #f7eb00, #fff200);
-    background-image: url('../Imagenes/juego_03.svg'); /* Ruta de la imagen de fondo */
+    background-image: url('../Imagenes/juego/boton_nivel_4.svg'); /* Ruta de la imagen de fondo */
 
     background-size: cover; /* Cambia el tamaño de la imagen para cubrir todo el botón */
 
@@ -286,7 +286,47 @@
     cursor: pointer;
 }
 
+@media only screen and (min-width: 590px) and (max-width: 759px) {
+    /* Ajustes para pantallas pequeñas */
+    #miImagen {
+        max-height: 210px;
+        width: auto;
+        object-fit: contain;
+    }
+}
+@media only screen and (min-width: 481px) and (max-width: 589px) {
+    /* Ajustes para pantallas pequeñas */
+    #miImagen {
+        max-height: 190px;
+        width: auto;
+        object-fit: contain;
+    }
+}
+@media only screen and (min-width: 477px) and (max-width: 480px) {
+    /* Ajustes para pantallas pequeñas */
+    #miImagen {
+        max-height: 190px;
+        width: auto;
+        object-fit: contain;
+    }
+}
+@media only screen and (max-width: 476px) {
+    /* Ajustes para pantallas muy pequeñas */
+    #miImagen {
+        max-height: 150px;
+        width: auto;
+        object-fit: contain;
+    }
+}
 
+@media only screen and (min-width: 760px) and (max-width: 980px) {
+    /* Ajustes para pantallas medianas */
+    #miImagen {
+        max-height: 280px;
+        width: auto;
+        object-fit: contain;
+    }
+}
 
 
 

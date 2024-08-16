@@ -9,7 +9,7 @@ document.getElementById('exitButton')?.addEventListener('click', function(event)
         icon: 'warning'
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = '../index.html'; // Redirigir a la página principal
+            window.location.href = '../juego.php'; // Redirigir a la página principal
         }
     });
 });

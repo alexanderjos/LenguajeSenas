@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"></script>
     <title>INDEX</title>
-    <script defer src="/js/script.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="../js/script.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body class="inicio">
@@ -36,7 +36,7 @@
     
     <div class="Juego">
         <div class="button-container-1" style="top: 80px; left: 75px;">
-            <a href="/Vista/nivel1.html" class="btn-circular-1"></a>
+            <a href="niveles/nivel1.html" class="btn-circular-1"></a>
             <div class="stars">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="button-container-2" style="bottom: 80px; left: 40px;">
-            <a href="Vista/nivel2.html" class="btn-circular-2"></a>
+            <a href="niveles/nivel2.html" class="btn-circular-2"></a>
             <div class="stars">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
