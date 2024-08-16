@@ -16,11 +16,6 @@
     <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <script defer src="../js/validaciones.js"></script>
     <script defer src="../js/registro.js"></script>
-    <style>
-    #venSuccess {
-        display: <?php echo isset($ventana['success']) ? $ventana['success'] : 'none'; ?>;
-    }
-    </style>
 
 
 </head>
@@ -32,10 +27,6 @@
                     <h2 class="text-center">Regístrate </h2>
                     <h5 class="text-center">Ingresa tus datos para crear una cuenta.</h5>
                     <h5 class="text-center">¿Ya tienes cuenta? <a href="../index.php">Inicia sesión</a></h5>
-                    <div class="alert alert-primary alert-dismissible fade show" id="venSuccess" role="alert">
-                        <h5>Registro correcto ahora ya puedes iniciar sesion</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
                     <div class="alert alert-danger alert-dismissible fade show" id="venError" role="alert">
                         <h5>Registro incorrecto, verifica los errores</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
