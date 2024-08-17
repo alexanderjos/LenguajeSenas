@@ -22,13 +22,8 @@ if (!empty($_POST["btningresar"])) {
             //Consultar Avatar
             $datos = $resultado->fetch_object();
             $_SESSION["avatar"] = $datos->URLFotoPerfil;
-            $avatar = $_SESSION["avatar"];
-             echo'<script>
-             var avatar = "' . $avatar . '";
-             alert(avatar); // Muestra el valor en la consola
-         </script>';
-
-
+            $_SESSION["vidas"] = $datos->Corazones;
+            $_SESSION["monedas"] = $datos->Monedas;
             header("Location: Vista/juego.php");
             exit();
         } else {

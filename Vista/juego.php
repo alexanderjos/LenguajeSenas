@@ -10,6 +10,7 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"></script>
     <title>INDEX</title>
     <script defer src="../js/script.js"></script>
+    <script defer src="../js/vidas.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -20,17 +21,17 @@ session_start();
             <div class="timer-container">
                 <div class="heart-container">
                     <i class="fa-solid fa-heart fa-2x heart" style="color: #ff000d;"></i>                   
-                    <span id="countdown" class="countdown">3</span>
+                    <span id="countdown" class="countdown"><?php echo $_SESSION["vidas"]?></span>
                 </div>
                 <div class="timer" id="timer">00:00:00</div>
             </div>
             <img src="../Imagenes/avatares/<?php echo $_SESSION["avatar"]?>.jpg" alt="Avatar" class="avatar-image">
             <div class="coins-container">
-                <img src="Imagenes/oro.gif" alt="Moneda" class="coin-icon">
-                <span class="coin-count"> 4500</span>
+                <i class="fa-solid fa-coins fa-2xl"style="color: #FFD700;"></i>          
+                <span class="coin-count"><?php echo $_SESSION["monedas"]?></span>
             </div>
             <div class="icons-container">
-                <img src="Imagenes/configuracion.png" alt="Configuración" class="icon settings-icon">
+                <i class="fa-solid fa-gear fa-2xl" style="color: #ffffff;"></i>
             </div>
         </div>
     </header>
