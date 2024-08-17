@@ -409,19 +409,17 @@ body {
     align-items: center;
     background-color: rgba(255, 107, 107, 0.8);
     border-radius: 25px;
-    padding: 5px 15px;
+    padding: 7px 15px;
     color: white;
 }
 
 .heart-container {
+    font-size: 1.5em;
     position: relative;
     margin-right: 15px;
 }
-
-.heart-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
+.heart-container span{
+    font-size: 1.3em;
 }
 
 .countdown {
@@ -434,7 +432,7 @@ body {
 }
 
 .timer {
-    font-size: 24px;
+    font-size:1.5em;
     font-weight: bold;
 }
 
@@ -442,17 +440,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #007bff, #8a2be2);
     border-radius: 15px;
     padding: 10px;
     width: 150px;
-    height: 50px;
+    height: 10px;
     margin: 15px;
-    clip-path: polygon(10% 0%, 90% 0%, 70% 100%, 30% 100%);
 }
 
 .avatar-image {
-    width: 50px;
+    width: 70px;
     height: auto;
 }
 

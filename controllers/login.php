@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start(); // Inicia el buffer de salida
 
 require __DIR__ . '/../config/database.php';
@@ -15,8 +16,19 @@ if (!empty($_POST["btningresar"])) {
         $stmt->bind_param("ss", $Nickname, $contraseña);
         $stmt->execute();
         $resultado = $stmt->get_result();
-
+        
         if ($resultado->num_rows > 0) {
+
+            //Consultar Avatar
+            $datos = $resultado->fetch_object();
+            $_SESSION["avatar"] = $datos->URLFotoPerfil;
+            $avatar = $_SESSION["avatar"];
+             echo'<script>
+             var avatar = "' . $avatar . '";
+             alert(avatar); // Muestra el valor en la consola
+         </script>';
+
+
             header("Location: Vista/juego.php");
             exit();
         } else {

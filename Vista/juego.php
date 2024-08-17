@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +19,12 @@
         <div class="game-bar">
             <div class="timer-container">
                 <div class="heart-container">
-                    <img src="Imagenes/corazon.gif" alt="Heart" class="heart-icon">
+                    <i class="fa-solid fa-heart fa-2x heart" style="color: #ff000d;"></i>                   
                     <span id="countdown" class="countdown">3</span>
                 </div>
                 <div class="timer" id="timer">00:00:00</div>
             </div>
-            <div class="avatar-container">
-                <img src="Imagenes/avatar.png" alt="Avatar" class="avatar-image">           
-            </div>
+            <img src="../Imagenes/avatares/<?php echo $_SESSION["avatar"]?>.jpg" alt="Avatar" class="avatar-image">
             <div class="coins-container">
                 <img src="Imagenes/oro.gif" alt="Moneda" class="coin-icon">
                 <span class="coin-count"> 4500</span>
