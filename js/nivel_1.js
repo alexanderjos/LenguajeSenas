@@ -119,14 +119,32 @@ verifyButton.addEventListener('click', () => {
     showScoreScreen(correctPositions, dropZones.length);
 });
 
-function showScoreScreen(correct, total) {
-    Swal.fire({
-        title: 'Resultado',
-        text: `Tu puntaje es: ${correct} de ${total}`,
-        icon: 'info',
-        confirmButtonText: 'Aceptar',
-    }).then(() => {
-        // Recargar la página para reiniciar el juego
-        location.reload();
+document.addEventListener('DOMContentLoaded', function() {
+    const verifyButton = document.getElementById('verifyButton');
+    const nextLevelButton = document.getElementById('nextLevelButton');
+    const retryButton = document.getElementById('retryButton');
+
+    verifyButton.addEventListener('click', function() {
+        // Aquí puedes añadir cualquier lógica adicional para verificar las respuestas
+
+        // Ocultar el botón "Enviar"
+        verifyButton.style.display = 'none';
+
+        // Mostrar los botones "Siguiente Nivel" y "Volver a Intentar"
+        nextLevelButton.style.display = 'inline-block';
+        retryButton.style.display = 'inline-block';
     });
-}
+
+    // Opcional: puedes añadir eventos a los botones "Siguiente Nivel" y "Volver a Intentar"
+    nextLevelButton.addEventListener('click', function() {
+        // Lógica para ir al siguiente nivel
+        window.location.href = "nivel_2.html";
+        // Aquí podrías redirigir a otra página o realizar alguna acción
+    });
+
+    retryButton.addEventListener('click', function() {
+        // Lógica para reintentar el nivel
+        location.reload(); // Recarga la página actual
+    });
+});
+

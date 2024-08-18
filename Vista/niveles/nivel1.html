@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script  src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="../../js/nivel_1.js"></script>
     <script defer src="../../js/ventanaSalir.js"></script>
     <title>Juego de Preguntas - Nivel 1</title>
@@ -49,7 +49,7 @@
                     <div class="drop-zone"></div>
                 </div>
                 <div class="image-box">
-                    <img src="../..//Imagenes/numeros_manos/mano_3.png" alt="Tres">
+                    <img src="../../Imagenes/numeros_manos/mano_3.png" alt="Tres">
                     <div class="drop-zone"></div>
                 </div>
                 <div class="image-box">
@@ -87,15 +87,34 @@
                     <li draggable="true">7. Siete</li>
                     <li draggable="true">8. Ocho</li>
                 </ul>
-                            <!-- Botón para verificar -->
-            <button id="verifyButton" class="btn btn-primary">VERIFICAR</button>
-
             </section>
-
-
         </main>
+
+        <div class="row mt-4">
+            <div class="col-6 text-start">
+                <a id="backButton" href="nivel2.html">                
+                    <img src="../../Imagenes/cambiarNivel/boton_izquierda.png" alt="Regresar" style="margin: 2em;  display: none;"/>
+                </a>
+            </div>
+            <div class="col-6 text-end">
+                <a id="verifyButton" href="#">                    
+                    <img src="../../Imagenes/cambiarNivel/checked.png" alt="verificar" style="margin: 2em; "/>
+                </a>
+
+                <a id="nextLevelButton"   href="nivel2.html" style= "display: none;">                   
+                    <img src="../../Imagenes/cambiarNivel/boton_derecha.png" alt="siguiente" style="margin: 2em; "/>
+                </a>
+                <a id="retryButton"  style="display: none;">
+                    
+                    <img src="../../Imagenes/cambiarNivel/rotate-right.png" alt="volverIntentar" style="margin: 2em; "/>
+
+                </a>
+            </div>
+        </div>
+        
     </div>
-    
+
+
 </body>
 
 </html>
