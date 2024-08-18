@@ -97,7 +97,27 @@ function returnToOriginalList(e) {
     }
 }
 
+function showScoreScreen(correct, total) {
+    Swal.fire({
+        title: 'Resultado',
+        text: `Tu puntaje es: ${correct} de ${total}`,
+        icon: 'info',
+        confirmButtonText: 'siguiente',
+        denyButtonText: 'Volver a Intentar',
 
+        showCloseButton: true,
+        showDenyButton: true,
+
+
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            location.href = "nivel2.html"
+        } else if (result.isDenied) {
+            location.reload(); // Recarga la página actual
+        }
+      });
+}
 
 //  Evento para verificar las posiciones al presionar el botón "VERIFICAR"
 verifyButton.addEventListener('click', () => {
@@ -118,6 +138,7 @@ verifyButton.addEventListener('click', () => {
 
     showScoreScreen(correctPositions, dropZones.length);
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const verifyButton = document.getElementById('verifyButton');
