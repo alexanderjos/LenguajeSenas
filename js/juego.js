@@ -55,7 +55,7 @@ function actualizarDatos() {
 }
 
 function vidas() {
-    let time = 0.15 * 60; // minutos * segundos
+    let time = 15 * 60; // minutos * segundos
 
     if (parseInt(corazones.textContent) === 4) {
         tiempo.textContent = 'Lleno';   
