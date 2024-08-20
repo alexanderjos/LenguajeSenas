@@ -70,23 +70,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const contrasenaInput = document.getElementById('password');
     const confirmarContrasenaInput = document.getElementById('password-confirm');
     const errorContrasena = document.getElementById('errorContrasena');
+    const errorC = document.getElementById('errorC');
 
     function validarContrasenas() {
-        if (contrasenaInput.value === confirmarContrasenaInput.value || confirmarContrasenaInput.value === '') {
-            // Si las contraseñas coinciden o el campo de confirmación está vacío, borra el mensaje de error
-            errorContrasena.textContent = '';
-        } else {
-            // Si las contraseñas no coinciden, muestra un mensaje de error
-            errorContrasena.textContent = 'Las contraseñas no coinciden.';
+        const contrasena = contrasenaInput.value;
+        
+        // Expresión regular para validar contraseña
+        const contrasenaRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,16}$/;
+
+        if (!contrasenaRegex.test(contrasena)) {
+            errorC.textContent = 'La contraseña debe tener entre 8 y 16 caracteres, incluir al menos una letra mayúscula y un número.';
+        }else {
+            errorC.textContent = '';
         }
     }
+    function validacionesContrasenas() {
+        const contrasena = contrasenaInput.value;
+        const confirmacion = confirmarContrasenaInput.value;
 
+        if (contrasena !== confirmacion) {
+            errorContrasena.textContent = 'Las contraseñas no coinciden.';
+        } else {
+            errorContrasena.textContent = '';
+        }
+    }
     // Añade un escuchador de eventos para cuando el usuario escribe en el campo de la contraseña
     contrasenaInput.addEventListener('input', validarContrasenas);
     // Añade un escuchador de eventos para cuando el usuario escribe en el campo de confirmación de contraseña
-    confirmarContrasenaInput.addEventListener('input', validarContrasenas);
-     // Inicializar Pikaday
-     var picker = new Pikaday({
+    confirmarContrasenaInput.addEventListener('input', validacionesContrasenas);
+    
+    // Inicializar Pikaday
+    var picker = new Pikaday({
         field: document.getElementById('birthdate'),
         format: 'YYYY-MM-DD',
         minDate: new Date(1900, 0, 1),

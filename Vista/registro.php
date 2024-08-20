@@ -50,7 +50,7 @@
                         <div class="mb-2">
                             <span class="error" id="errorCorreo"></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-1">
                             <label for="password" class="form-label">Contraseña</label>
                             <div class="input-group">
                                 <input type="password" class="form-control" id="password" name="password" required>
@@ -58,6 +58,9 @@
                                     <i class="fa-solid fa-eye"></i>
                                 </button>
                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="error" id="errorC"></span>
                         </div>
                         <div class="mb-1">
                             <label for="password-confirm" class="form-label">Repetir contraseña</label>

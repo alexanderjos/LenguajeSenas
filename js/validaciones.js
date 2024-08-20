@@ -14,7 +14,7 @@ document.getElementById('nickname').addEventListener('blur', function() {
             const data = JSON.parse(text);  // Intenta parsear el texto a JSON
             if (data.existe) {
                 
-                errorNickname.textContent = 'Nickname no disponible pudes usar números';
+                errorNickname.textContent = 'Nickname no disponible, pudes usar números';
             } else {
                 errorNickname.textContent = '';
             }
@@ -27,7 +27,7 @@ document.getElementById('nickname').addEventListener('blur', function() {
 document.getElementById('email').addEventListener('blur', function() {
     const email = this.value;
     const errorCorreo = document.getElementById('errorCorreo');
-    fetch('../controllers/validarcorreo.php', {
+    fetch('../controllers/validar.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
