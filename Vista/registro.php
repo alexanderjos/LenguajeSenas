@@ -31,6 +31,7 @@
                         <h5>Registro incorrecto, verifica los errores</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
+                    
                     <form  action="registrar.php" method="post">
                         <div class="mb-3">
                             <label for="name" class="form-label">Nombre</label>
