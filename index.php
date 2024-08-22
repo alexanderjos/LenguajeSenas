@@ -28,6 +28,7 @@ ob_start();
             <?php
                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                    include("controllers/login.php");
+                   echo'<br>';
                }
             ?>
             <div class="input-div one">

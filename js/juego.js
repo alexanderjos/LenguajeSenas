@@ -7,22 +7,18 @@ const corazones = document.getElementById('corazones');
 const monedas = document.getElementById('monedas');
 const tiempo = document.getElementById('timer');
 
-function consultar(){
-    const consulta =setInterval(()=>{
-        if(corazones.textContent === ''){
+function consultar() {
+    const consulta = setInterval(() => {
+        if (corazones.textContent === '') {
             tiempo.textContent = '';
-        } else if(parseInt(corazones.textContent)<4){
+        } else if (parseInt(corazones.textContent) < 4) {
             clearInterval(consulta);
-            
-            vidas();
-        }else{
-            
+            vidas(); // Iniciar el cronómetro cuando hay menos de 4 corazones
+        } else {
             actualizarDatos();
         }
-        
-    },1000)
+    }, 1000);
 }
-
 
 function actualizarDatos() {
     const id = document.getElementById('nickname').innerText; // Obtener el valor del nickname
@@ -35,30 +31,31 @@ function actualizarDatos() {
             },
             body: `id=${encodeURIComponent(id)}`, // Cuerpo de la solicitud en formato URL-encoded
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            corazones.textContent = data.Corazones; // Actualiza el número de corazones
-            monedas.textContent = data.Monedas;
-            if(corazones.textContent === '4'){
-                tiempo.textContent = 'Lleno';
-            }
-        })
-        .catch(error => console.error('Error:', error));
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                corazones.textContent = data.Corazones; // Actualiza el número de corazones
+                monedas.textContent = data.Monedas;
+                if (corazones.textContent === '4') {
+                    tiempo.textContent = 'Lleno';
+                }
+            })
+            .catch(error => console.error('Error:', error));
     } else {
         console.log('ID is empty.');
     }
 }
 
 function vidas() {
-    let time = 15 * 60; // minutos * segundos
+    let time = parseInt(localStorage.getItem('tiempoRestante')) || 15 * 60; // Restaurar tiempo guardado o iniciar desde 15 minutos
 
     if (parseInt(corazones.textContent) === 4) {
-        tiempo.textContent = 'Lleno';   
+        tiempo.textContent = 'Lleno';
+        localStorage.removeItem('tiempoRestante'); // Eliminar tiempo guardado si ya está lleno
     } else {
         const cronometro = setInterval(() => {
             const minutos = Math.floor(time / 60);
@@ -66,12 +63,15 @@ function vidas() {
             tiempo.textContent = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
             time--;
 
+            // Guardar el tiempo restante en localStorage
+            localStorage.setItem('tiempoRestante', time);
+
             if (time < 0) {
                 clearInterval(cronometro); // Detener el cronómetro
+                localStorage.removeItem('tiempoRestante'); // Limpiar el tiempo almacenado al terminar
                 actualizarVida()
                     .then(() => {
-                        // Mostrar el valor actualizado de corazones
-                        vidas();
+                        vidas(); // Reiniciar el cronómetro para la siguiente vida
                     })
                     .catch(error => console.error('Error al actualizar la vida:', error));
             }
@@ -85,7 +85,6 @@ function actualizarVida() {
 
     return new Promise((resolve, reject) => {
         if (nickname && !isNaN(vida)) {
-
             fetch('../models/juego.php', {
                 method: 'POST',
                 headers: {
@@ -93,21 +92,21 @@ function actualizarVida() {
                 },
                 body: `nickname=${encodeURIComponent(nickname)}&vida=${encodeURIComponent(vida)}`,
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('La respuesta de la red no fue exitosa.');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.existe) {
-                    corazones.textContent = vida; // Actualiza el contenido con el nuevo valor
-                    resolve(); // Resuelve la promesa cuando se complete la actualización
-                } else {
-                    reject(data.error || 'No se actualizó ningún registro.');
-                }
-            })
-            .catch(error => reject(error));
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('La respuesta de la red no fue exitosa.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.existe) {
+                        corazones.textContent = vida; // Actualiza el contenido con el nuevo valor
+                        resolve(); // Resuelve la promesa cuando se complete la actualización
+                    } else {
+                        reject(data.error || 'No se actualizó ningún registro.');
+                    }
+                })
+                .catch(error => reject(error));
         } else {
             console.log('El nickname está vacío o la vida es inválida.');
             reject('El nickname está vacío o la vida es inválida.');
