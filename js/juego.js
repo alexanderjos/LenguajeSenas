@@ -51,24 +51,28 @@ function actualizarDatos() {
 }
 
 function vidas() {
-    let time = parseInt(localStorage.getItem('tiempoRestante')) || 15 * 60; // Restaurar tiempo guardado o iniciar desde 15 minutos
+    const tiempoRestante = calcularTiempoRestante(); // Calcula el tiempo restante usando la hora actual y la hora guardada
 
     if (parseInt(corazones.textContent) === 4) {
         tiempo.textContent = 'Lleno';
-        localStorage.removeItem('tiempoRestante'); // Eliminar tiempo guardado si ya está lleno
+        localStorage.removeItem('horaInicio'); // Eliminar la hora de inicio si ya está lleno
     } else {
+        let time = tiempoRestante > 0 ? tiempoRestante : 15 * 60; // Usa el tiempo restante o 15 minutos si no hay uno guardado
+
+        if (!localStorage.getItem('horaInicio')) {
+            // Guarda la hora de inicio si no existe
+            localStorage.setItem('horaInicio', Date.now());
+        }
+
         const cronometro = setInterval(() => {
             const minutos = Math.floor(time / 60);
             const segundos = time % 60;
             tiempo.textContent = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
             time--;
 
-            // Guardar el tiempo restante en localStorage
-            localStorage.setItem('tiempoRestante', time);
-
             if (time < 0) {
                 clearInterval(cronometro); // Detener el cronómetro
-                localStorage.removeItem('tiempoRestante'); // Limpiar el tiempo almacenado al terminar
+                localStorage.removeItem('horaInicio'); // Limpiar la hora de inicio almacenada al terminar
                 actualizarVida()
                     .then(() => {
                         vidas(); // Reiniciar el cronómetro para la siguiente vida
@@ -77,6 +81,17 @@ function vidas() {
             }
         }, 1000);
     }
+}
+
+function calcularTiempoRestante() {
+    const horaInicio = localStorage.getItem('horaInicio');
+    if (horaInicio) {
+        const ahora = Date.now();
+        const tiempoPasado = Math.floor((ahora - parseInt(horaInicio)) / 1000); // Tiempo pasado en segundos
+        const tiempoTotal = 15 * 60; // 15 minutos en segundos
+        return tiempoTotal - tiempoPasado; // Devuelve el tiempo restante
+    }
+    return 0; // Si no hay hora guardada, considera que no hay tiempo restante
 }
 
 function actualizarVida() {
