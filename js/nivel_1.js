@@ -97,6 +97,28 @@ function returnToOriginalList(e) {
     }
 }
 
+function aumentoPuntaje(id,aumento) {
+    // Crear un objeto con los datos
+    const datos = { id: id, aumento: aumento };
+
+    // Enviar los datos a través de una solicitud AJAX
+    fetch('aumentoPuntaje.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(datos),
+    })
+    
+    .then(response => response.json())
+    .then(data => {
+      console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
 function showScoreScreen(correct, total) {
     Swal.fire({
         title: 'Resultado',
@@ -137,6 +159,7 @@ verifyButton.addEventListener('click', () => {
     });
 
     showScoreScreen(correctPositions, dropZones.length);
+    aumentoPuntaje(4,correctPositions);
 });
 
 
@@ -144,6 +167,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const verifyButton = document.getElementById('verifyButton');
     const nextLevelButton = document.getElementById('nextLevelButton');
     const retryButton = document.getElementById('retryButton');
+    const barraInferior = document.getElementById('fixed-bar');
+
 
     verifyButton.addEventListener('click', function() {
         // Aquí puedes añadir cualquier lógica adicional para verificar las respuestas
@@ -151,9 +176,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ocultar el botón "Enviar"
         verifyButton.style.display = 'none';
 
+        barraInferior.style.backgroundColor = '#3074C7'; // Cambia el color a rojo o el color deseado
+
         // Mostrar los botones "Siguiente Nivel" y "Volver a Intentar"
         nextLevelButton.style.display = 'inline-block';
         retryButton.style.display = 'inline-block';
+
+
+
     });
 
     // Opcional: puedes añadir eventos a los botones "Siguiente Nivel" y "Volver a Intentar"
@@ -168,4 +198,6 @@ document.addEventListener('DOMContentLoaded', function() {
         location.reload(); // Recarga la página actual
     });
 });
+
+
 

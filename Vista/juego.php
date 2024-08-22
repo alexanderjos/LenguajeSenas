@@ -31,6 +31,7 @@
                     </div>
                     <div class="timer" id="timer"></div>
                 </div>
+                
                 <div class="av-container">
                     <img src="../Imagenes/avatares/<?php echo $_SESSION["avatar"]?>.jpg" alt="Avatar" class="avatar-image">
                     <span id="nickname"><?php echo $_SESSION["nickname"]?></span>
