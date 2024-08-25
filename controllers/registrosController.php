@@ -8,6 +8,7 @@ class registrosController{
         require_once __DIR__ . '/../models/registrosModel.php';
         $this->registros = new RegistrosModel();
     }
+    
     public function index(){
         $usuario = $_POST["name"];
         $nickname = $_POST["nickname"];

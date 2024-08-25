@@ -102,7 +102,7 @@ function aumentoPuntaje(id,aumento) {
     const datos = { id: id, aumento: aumento };
 
     // Enviar los datos a través de una solicitud AJAX
-    fetch('aumentoPuntaje.php', {
+    fetch('../../controllers/aumentoPuntaje.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

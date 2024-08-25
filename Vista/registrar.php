@@ -17,6 +17,7 @@ if (isset($_GET["c"])) {
     } else {
         validarAccion($controlador, ACCION_DEFAULT);
     }
+    
 } else {
     $control = validarControlador(CONTROLADOR_DEFAULT);
     $accionTMP = ACCION_DEFAULT;

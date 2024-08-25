@@ -272,6 +272,9 @@ margin-right: auto;
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
     margin-left: calc(-50vw + 50%); /* Centra la barra y la hace abarcar toda la pantalla */
     position: relative; /* Permite que el margen negativo funcione correctamente */
-    border-top: 2px solid white; /* Agrega un borde superior de 2px de color blanco */
+    border-top: 5px solid #0066E4; /* Agrega un borde superior de 2px de color blanco */
+
+    background-color: #ffffff;
+
 
 }
