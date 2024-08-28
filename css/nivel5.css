@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('/Imagenes/fondos/nivel5.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    background: linear-gradient(to right, #0066ff, #9fde1f); /* Fondo degradado */
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+
+.lives {
+    display: flex;
+    margin-top: 10px;
+}
+
+.life {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.battle-icon {
+    font-size: 7em;
+    color: yellow;
+}
+
+.game-space {
+    width: 80%;
+    height: 400px;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajustes adicionales para mejorar la interfaz */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+    
+    .game-space {
+        height: 300px;
+    }
+}
