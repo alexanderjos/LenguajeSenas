@@ -11,31 +11,45 @@ $Nickname = $_SESSION["nickname"];
 
 if ($conexion) {
     $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE nickname = ?");
-    $stmt->bind_param("s", $Nickname); 
+    $stmt->bind_param("s", $Nickname);
     $stmt->execute();
     $resultado = $stmt->get_result();
 
     if ($resultado->num_rows > 0) {
         $jugador = $resultado->fetch_assoc();
         $vidas = $jugador['Corazones'];
-        $ultimaConexion = $jugador['UltimaConexion'];
-        $tiempo_actual = time();
-        $tiempo_regeneracion = 15 * 60; // 15 minutos en segundos
-        
-        // Calcular el tiempo transcurrido desde la última recarga
-        $tiempo_transcurrido = $tiempo_actual - $ultimaConexion;
-        
-        // Calcular cuántas vidas deben regenerarse
-        $vidas_a_regenerar = floor($tiempo_transcurrido / $tiempo_regeneracion);
-        
-        if ($vidas < 4 && $vidas_a_regenerar > 0) {
-            $vidas = min(4, $vidas + $vidas_a_regenerar);
-            
-            // Actualizar la base de datos con las nuevas vidas y la hora de la última recarga
-            $stmt = $conexion->prepare("UPDATE usuarios SET Corazones = ?, UltimaConexion = ? WHERE nickname = ?");
-            $stmt->bind_param("iis", $vidas, $tiempo_actual, $Nickname);
-            $stmt->execute();
-            
+
+        if ($vidas < 4) {
+            $ultimaConexion = $jugador['UltimaConexion'];
+            date_default_timezone_set('America/Bogota');    
+            $tiempo_actual = new DateTime();
+            $ultimaConexion = new DateTime($ultimaConexion);
+
+            // Calcular la diferencia de tiempo entre la última conexión y la hora actual
+            $intervalo = $ultimaConexion->diff($tiempo_actual);
+
+            // Convertir la diferencia de tiempo a segundos
+            $segundos_transcurridos = ($intervalo->h * 3600) + ($intervalo->i * 60) + $intervalo->s;
+
+            $tiempo_regeneracion = 15 * 60; // 15 minutos en segundos (el tiempo necesario para regenerar una vida)
+
+            // Calcular cuántas vidas se deben regenerar basándose en el tiempo transcurrido
+            $vidas_a_regenerar = floor($segundos_transcurridos / $tiempo_regeneracion);
+
+
+            if ($vidas_a_regenerar > 0) {
+                $vidas = min(4, $vidas + $vidas_a_regenerar);
+
+                // Actualizar la base de datos con las nuevas vidas y la hora de la última recarga
+                $stmt = $conexion->prepare("UPDATE usuarios SET Corazones = ?, UltimaConexion = ? WHERE nickname = ?");
+                $stmt->bind_param("iss", $vidas, $tiempo_actual->format('Y-m-d H:i:s'), $Nickname);
+                $stmt->execute();
+
+                
+            }
+            header("Location: ../Vista/juego.php");
+                exit();
+        } else {
             header("Location: ../Vista/juego.php");
             exit();
         }
