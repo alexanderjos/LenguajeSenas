@@ -11,7 +11,7 @@ if ($conexion) {
     $id = isset($_POST['id']) ? $_POST['id'] : '';
     $nickname = isset($_POST['nickname']) ? $_POST['nickname'] : '';
     $vidas = isset($_POST['vida']) ? $_POST['vida'] : '';
-
+    $actvidas = isset($_POST['actvidas']) ? $_POST['actvidas'] : '';
     if ($id) {
         // Operación SELECT: Obtener datos de la base de datos
         $sql = "SELECT * FROM vidas_monedas WHERE nickname = ?";
@@ -58,7 +58,7 @@ if ($conexion) {
     }
 
     $conexion->close();
-} else {
+}else {
     echo json_encode(['existe' => false, 'error' => 'No se pudo conectar a la base de datos.']);
 }
 ?>

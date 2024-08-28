@@ -23,7 +23,7 @@ if (!empty($_POST["btningresar"])) {
             $datos = $resultado->fetch_object();
             $_SESSION["avatar"] = $datos->URLFotoPerfil;
             $_SESSION["nickname"] = $datos->nickname;
-            header("Location: Vista/juego.php");
+            header("Location: models/vidas.php");
             exit();
         } else {
             echo '<div>Usuario o Contraseña incorrecta</div>';

@@ -128,3 +128,10 @@ function actualizarVida() {
         }
     });
 }
+window.addEventListener('beforeunload', function (event) {
+    // Muestra una alerta personalizada
+    const nickname = req.session.nickname;    
+    // Para mostrar una confirmación antes de salir
+    this.alert(nickname);
+});
+
