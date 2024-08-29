@@ -36,24 +36,29 @@ if ($conexion) {
         }
     } elseif ($vidas && $nickname) {
         // Operación UPDATE: Actualizar datos en la base de datos
-        $sql = "UPDATE usuarios SET Corazones = ? WHERE nickname = ?";
+        $sql = "UPDATE usuarios SET Corazones = ?, UltimaConexion = ? WHERE nickname = ?";
         $stmt = $conexion->prepare($sql);
+        date_default_timezone_set('America/Bogota');    
 
+        $tiempo_actual = new DateTime();
+        $tiempo_formateado = $tiempo_actual->format('Y-m-d H:i:s'); // Formato completo para DATETIME
+    
         if ($stmt) {
-            $stmt->bind_param("is", $vidas, $nickname);
+            $stmt->bind_param("iss", $vidas, $tiempo_formateado, $nickname);
             $stmt->execute();
-
+    
             if ($stmt->affected_rows > 0) {
                 echo json_encode(['existe' => true, 'mensaje' => 'Actualización exitosa.']);
             } else {
                 echo json_encode(['existe' => false, 'mensaje' => 'No se actualizó ningún registro.']);
             }
-
+    
             $stmt->close();
         } else {
             echo json_encode(['existe' => false, 'error' => 'Error en la consulta.']);
         }
-    } else {
+    }
+    else {
         echo json_encode(['existe' => false, 'error' => 'Datos insuficientes para la operación.']);
     }
 

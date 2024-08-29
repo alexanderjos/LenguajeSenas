@@ -22,7 +22,7 @@ if (!empty($_POST["btningresar"])) {
             //Consultar Avatar
             $datos = $resultado->fetch_object();
             $_SESSION["avatar"] = $datos->URLFotoPerfil;
-            $_SESSION["nickname"] = $datos->nickname;
+            $_SESSION["nicnkame"] = $datos->nickname;
             header("Location: models/vidas.php");
             exit();
         } else {
