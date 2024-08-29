@@ -1,5 +1,8 @@
 <?php
+session_destroy(); // Termina la sesión y limpia los datos
+
 session_start();
+
 ob_start(); // Inicia el buffer de salida
 
 require __DIR__ . '/../config/database.php';
@@ -18,11 +21,11 @@ if (!empty($_POST["btningresar"])) {
         $resultado = $stmt->get_result();
         
         if ($resultado->num_rows > 0) {
-
-            //Consultar Avatar
+            // Consultar Avatar
             $datos = $resultado->fetch_object();
             $_SESSION["avatar"] = $datos->URLFotoPerfil;
-            $_SESSION["nicnkame"] = $datos->nickname;
+            $_SESSION["nickname"] = $datos->nickname; // Usa el nombre de variable correcto
+            //echo $_SESSION["nickname"];
             header("Location: models/vidas.php");
             exit();
         } else {

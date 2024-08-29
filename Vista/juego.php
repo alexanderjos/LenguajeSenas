@@ -16,7 +16,7 @@
 
     <title>Juego</title>
     <script defer src="../js/script.js"></script>
-    <script type="module" defer src="../js/juego.js"></script>
+    <script defer src="../js/juego.js"></script>
     <script defer src="../js/vidas.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>

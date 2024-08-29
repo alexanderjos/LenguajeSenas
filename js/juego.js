@@ -1,4 +1,3 @@
-let vida = 0; // Variable global para almacenar el número de vidas
 
 document.addEventListener('DOMContentLoaded', function () {
     actualizarDatos(); // Llamada inmediata para actualizar las vidas rápidamente
@@ -42,7 +41,6 @@ function actualizarDatos() {
             .then(data => {
                 corazones.textContent = data.Corazones; // Actualiza el número de corazones
                 monedas.textContent = data.Monedas;
-                vida = corazones.textContent;
                 if (corazones.textContent === '4') {
                     tiempo.textContent = 'Lleno';
                 }
@@ -131,5 +129,3 @@ function actualizarVida() {
         }
     });
 }
-// Exportar la variable vida
-export const vida3 = 100; // Exporta la variable vida
