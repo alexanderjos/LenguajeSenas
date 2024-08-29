@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Imagen</title>
+</head>
+<body>
+    <form action="subir_signo.php" method="post" enctype="multipart/form-data">
+        <label for="imagen">Seleccionar Imagen:</label>
+        <input type="file" name="imagen" id="imagen" required>
+        <br><br>
+        <label for="significado">Significado:</label>
+        <input type="text" name="significado" id="significado" required>
+        <br><br>
+        <label for="categoria">ID de Categoría:</label>
+        <input type="number" name="categoria" id="categoria" required>
+        <br><br>
+        <input type="submit" value="Subir Imagen">
+    </form>
+</body>
+</html>

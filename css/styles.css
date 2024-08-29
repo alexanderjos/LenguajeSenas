@@ -599,3 +599,77 @@ body {
 .over {
     border: 1px dashed #000;
 }
+
+
+
+#verifyButton {
+    padding: 0.875rem 2.9375rem;
+    align-items: flex-start;
+    gap: 0.5rem;
+    border: none;
+
+    border-radius: 1rem;
+    background: #42C62F;
+    box-shadow: 0px 4px 0px 0px #489D26;
+
+
+    color: #FEFFFE;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.125rem; /* 120% */
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+
+    margin-right: auto;
+}
+
+
+#nextLevelButton {
+    padding: 0.875rem 2.9375rem;
+    align-items: flex-start;
+    gap: 0.5rem;
+    border: none;
+
+border-radius: 1rem;
+background: #30A3C7;
+box-shadow: 0px 4px 0px 0px #008CB7;
+
+
+color: #FEFFFE;
+text-align: center;
+font-family: "Inter", sans-serif;
+font-optical-sizing: auto;
+
+font-size: 0.9375rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.125rem; /* 120% */
+letter-spacing: 0.05rem;
+text-transform: uppercase;
+
+margin-right: auto;
+}
+.fixed-bar {
+
+
+    text-align: center;
+    padding: 1.67131rem 8rem ;
+    display: flex;
+    /* background-color: #3074C7;  */
+
+
+    width: 100vw; /* Abarca todo el ancho de la pantalla */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    margin-left: calc(-50vw + 50%); /* Centra la barra y la hace abarcar toda la pantalla */
+    position: relative; /* Permite que el margen negativo funcione correctamente */
+    /* border-top: 5px solid #0066E4; Agrega un borde superior de 2px de color blanco */
+
+    /* background-color: #ffffff; */
+
+
+}

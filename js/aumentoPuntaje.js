@@ -18,4 +18,6 @@ function aumentoPuntaje(id,aumento) {
     .catch(error => {
       console.error('Error:', error);
     });
+
+    
 }
