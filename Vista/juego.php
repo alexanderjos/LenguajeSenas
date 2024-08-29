@@ -11,11 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"></script>
+    <link rel="shortcut icon" href="../Imagenes/logo.ico" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <title>INDEX</title>
+    <title>Juego</title>
     <script defer src="../js/script.js"></script>
-    <script defer src="../js/juego.js"></script>
+    <script type="module" defer src="../js/juego.js"></script>
     <script defer src="../js/vidas.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
@@ -49,7 +50,7 @@
     
     <div class="Juego">
         <div class="button-container-1" style="top: 80px; left: 75px;">
-            <a href="niveles/nivel1.html" class="btn-circular-1"></a>
+            <a href="niveles/nivel1.php" class="btn-circular-1"></a>
             <div class="stars">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>

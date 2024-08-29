@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +16,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="../../js/nivel_1.js"></script>
-    <script defer src="../../js/ventanaSalir.js"></script>
+    <script  type="module"  defer src="../../js/ventanaSalir.js"></script>
     <title>Juego de Preguntas - Nivel 1</title>
 </head>
 
@@ -22,8 +25,8 @@
         <header class="mb-3">
             <div class="row p-3 align-items-center encabezadoN2">
                 <div class="col-1 text-center">
-                    <a href="#" id="exitButton" class="text-white">
-                        <i class="fa-solid fa-house casa"></i>
+                    <a href="#" id="exitButton" class="text-white" data-user="<?php echo htmlspecialchars($_SESSION['nickname'], ENT_QUOTES, 'UTF-8'); ?>">
+                    <i class="fa-solid fa-house casa"></i>
                     </a>
                 </div>
                 <div class="col-10 text-center">

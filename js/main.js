@@ -33,4 +33,4 @@ function vista() {
         document.getElementById("input").type="password";
         contador = true;
     }
-}
+} 

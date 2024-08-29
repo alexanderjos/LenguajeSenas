@@ -36,19 +36,26 @@ if ($conexion) {
             // Calcular cuántas vidas se deben regenerar basándose en el tiempo transcurrido
             $vidas_a_regenerar = floor($segundos_transcurridos / $tiempo_regeneracion);
 
+            $minutos_totales = $vidas_a_regenerar * 15;
+            
+            // Crear un nuevo DateTime con la hora actual
+            $fecha = new DateTime($ultimaConexion->format('H:i:s'));
+
+            // Crear un intervalo con los minutos calculados
+            $intervalo = new DateInterval('PT' . $minutos_totales . 'M');
+            // Sumar el intervalo a la fecha
+            $fecha->add($intervalo);
 
             if ($vidas_a_regenerar > 0) {
                 $vidas = min(4, $vidas + $vidas_a_regenerar);
 
                 // Actualizar la base de datos con las nuevas vidas y la hora de la última recarga
                 $stmt = $conexion->prepare("UPDATE usuarios SET Corazones = ?, UltimaConexion = ? WHERE nickname = ?");
-                $stmt->bind_param("iss", $vidas, $tiempo_actual->format('Y-m-d H:i:s'), $Nickname);
+                $stmt->bind_param("iss", $vidas, $fecha->format('H:i:s'), $Nickname);
                 $stmt->execute();
-
-                
-            }
+           }
             header("Location: ../Vista/juego.php");
-                exit();
+            exit();
         } else {
             header("Location: ../Vista/juego.php");
             exit();
