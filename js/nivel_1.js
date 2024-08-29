@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ocultar el botón "Enviar"
         verifyButton.style.display = 'none';
 
-        barraInferior.style.backgroundColor = '#3074C7'; // Cambia el color a rojo o el color deseado
+        // barraInferior.style.backgroundColor = '#3074C7'; // Cambia el color a rojo o el color deseado
 
         // Mostrar los botones "Siguiente Nivel" y "Volver a Intentar"
         nextLevelButton.style.display = 'inline-block';
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Opcional: puedes añadir eventos a los botones "Siguiente Nivel" y "Volver a Intentar"
     nextLevelButton.addEventListener('click', function() {
         // Lógica para ir al siguiente nivel
-        window.location.href = "nivel_2.html";
+        window.location.href = "nivel2.html";
         // Aquí podrías redirigir a otra página o realizar alguna acción
     });
 

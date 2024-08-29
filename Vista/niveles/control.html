@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Signos</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="control.css">
+    <script defer src="control.js"></script>
+
+
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="signo">
+ 
+
+            <div class="preview" ondrop="upload_file(event)" ondragover="return false">
+
+                <div class="icon">    
+                    <span class="material-symbols-outlined" style="font-size:100px;color:#9ca3af;">
+                        download
+                  </span>
+
+                </div>
+
+                
+                <header>Arrastrar y soltar para cargar imagen</header>
+                <span>o</span>
+                <button>Busca Archivo</button>
+
+
+                
+                <input type="file" name="file" id="file" hidden>
+            
+            </div>
+
+
+
+            <div class="input-group">
+                <label for="significado">Significado</label>
+                <input type="text" id="significado" placeholder="Ingrese el significado">
+            </div>
+            <div class="input-group">
+                <label for="categoria">Categoría</label>
+
+                <select id="categoria-lista">
+                    <option value="" disabled selected>Categoría</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <button>NUEVO</button>
+                <button>MODIFICAR</button>
+                <button>INHABILITAR</button>
+            </div>
+        </div> -->
+
+
+        <form action="subir_signo.php" method="post" enctype="multipart/form-data">
+            <div class="signo">
+                <div class="preview" ondrop="upload_file(event)" ondragover="return false">
+                    <div class="icon">    
+                        <span class="material-symbols-outlined" style="font-size:100px;color:#9ca3af;">
+                            download
+                        </span>
+                    </div>
+                    <header>Arrastrar y soltar para cargar imagen</header>
+                    <span>o</span>
+                    <button type="button" onclick="document.getElementById('imagen').click();">Busca Archivo</button>
+                    <input type="file" name="imagen" id="imagen" hidden required>
+                </div>
+        
+                <div class="input-group">
+                    <label for="significado">Significado</label>
+                    <input type="text" id="significado" name="significado" placeholder="Ingrese el significado" required>
+                </div>
+        
+                <div class="input-group">
+                    <label for="categoria">ID de Categoría</label>
+                    <input type="number" id="categoria" name="categoria" placeholder="Ingrese el ID de la categoría" required>
+                </div>
+        
+                <div class="buttons">
+                    <button type="submit" value="Subir Imagen">Subir Imagen</button>
+                </div>
+            </div>
+        </form>
+        
+
+
+
+        <form action="subir_signo.php" method="post" enctype="multipart/form-data">
+            <label for="imagen">Seleccionar Imagen:</label>
+            <input type="file" name="imagen" id="imagen" required>
+            <br><br>
+            <label for="significado">Significado:</label>
+            <input type="text" name="significado" id="significado" required>
+            <br><br>
+            <label for="categoria">ID de Categoría:</label>
+            <input type="number" name="categoria" id="categoria" required>
+            <br><br>
+            <input type="submit" value="Subir Imagen">
+        </form>
+
+
+        
+
+
+
+
+
+
+        <div class="sidebar">
+            <select id="categoria-lista">
+                <option value="" disabled selected>Categoría</option>
+                <!-- Opciones dinámicas aquí -->
+            </select>
+            <button>NUEVO</button>
+                    
+            <div class="significado-preview">
+                <!-- <div class="list-header">LISTA</div> -->
+                <div class="list-item">
+                    <img src="https://via.placeholder.com/50" alt="Vista previa del significado">
+                    
+                    <span>Significado del signo</span>
+                </div>
+                <div class="list-item">
+                    <img src="https://via.placeholder.com/50" alt="Vista previa del significado">
+                    <span>Significado del signo</span>
+                </div>
+
+                <div class="list-item">
+                    <img src="https://via.placeholder.com/50" alt="Vista previa del significado">
+                    <span>Significado del signo</span>
+                </div>
+                <div class="list-item">
+                    <img src="https://via.placeholder.com/50" alt="Vista previa del significado">
+                    <span>Significado del signo</span>
+                </div>
+
+                <div class="list-item">
+                    <img src="https://via.placeholder.com/50" alt="Vista previa del significado">
+                    <span>Significado del signo</span>
+                </div>            
+                <div class="list-item">
+                    <img src="https://via.placeholder.com/50" alt="Vista previa del significado">
+                    <span>Significado del signo</span>
+                </div>            
+                <!-- Puedes añadir más elementos de la lista aquí -->
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</body>
+</html>

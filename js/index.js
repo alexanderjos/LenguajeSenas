@@ -53,6 +53,10 @@ function seleccionarOpcion(index) {
             text: "La respuesta ha sido correcta",
             icon: "success",
         });
+
+        verificar()
+        aumentoPuntaje(4,1);
+
     } else {
         Swal.fire({
             title: "Respuesta incorrecta",
@@ -60,6 +64,75 @@ function seleccionarOpcion(index) {
             icon: "error",
         });
     }
+
 }
+
+
+
+//////////////////////////
+
+//  Evento para verificar las posiciones al presionar el botón "VERIFICAR"
+// verifyButton.addEventListener('click', () => {
+//     correctPositions = 0;
+
+//     dropZones.forEach(zone => {
+//         const droppedText = zone.textContent.trim();
+//         const number = zone.previousElementSibling.alt;
+//         const imageBox = zone.parentElement; // Selecciona el contenedor 'image-box'
+
+//         if (droppedText.includes(number)) {
+//             imageBox.style.backgroundColor = 'green';
+//             correctPositions++;
+//         } else {
+//             imageBox.style.backgroundColor = 'red';
+//         }
+//     });
+
+//     showScoreScreen(correctPositions, dropZones.length);
+
+//     const aumentoPuntaje = require('../js/aumentoPuntaje');
+
+//     aumentoPuntaje(4,correctPositions);
+// });
+
+
+function verificar() {
+    // Aquí puedes añadir cualquier lógica adicional para verificar las respuestas
+
+    // Ocultar el botón "Enviar"
+    verifyButton.style.display = 'none';
+
+    // barraInferior.style.backgroundColor = '#3074C7'; // Cambia el color a rojo o el color deseado
+
+    // Mostrar los botones "Siguiente Nivel" y "Volver a Intentar"
+    nextLevelButton.style.display = 'inline-block';
+    retryButton.style.display = 'inline-block';
+
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const verifyButton = document.getElementById('verifyButton');
+    const nextLevelButton = document.getElementById('nextLevelButton');
+    const retryButton = document.getElementById('retryButton');
+    const barraInferior = document.getElementById('fixed-bar');
+
+
+
+
+    // Opcional: puedes añadir eventos a los botones "Siguiente Nivel" y "Volver a Intentar"
+    nextLevelButton.addEventListener('click', function() {
+        // Lógica para ir al siguiente nivel
+        window.location.href = "nivel3.html";
+        // Aquí podrías redirigir a otra página o realizar alguna acción
+    });
+
+    retryButton.addEventListener('click', function() {
+        // Lógica para reintentar el nivel
+        location.reload(); // Recarga la página actual
+    });
+});
+
+
+
 
 
