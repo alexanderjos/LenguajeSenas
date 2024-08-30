@@ -1,8 +1,6 @@
 <?php
 require __DIR__ . '/../config/database.php';
-
 header('Content-Type: application/json');
-
 // Obtener la conexión utilizando la clase Conectar
 $conexion = Conectar::getConexion();
 

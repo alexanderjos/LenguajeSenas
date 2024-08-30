@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     actualizarDatos(); // Llamada inmediata para actualizar las vidas rápidamente
     consultar();
@@ -41,6 +40,7 @@ function actualizarDatos() {
             .then(data => {
                 corazones.textContent = data.Corazones; // Actualiza el número de corazones
                 monedas.textContent = data.Monedas;
+
                 if (corazones.textContent === '4') {
                     tiempo.textContent = 'Lleno';
                 }
@@ -125,7 +125,14 @@ function actualizarVida() {
                 .catch(error => reject(error));
         } else {
             console.log('El nickname está vacío o la vida es inválida.');
-            reject('El nickname está vacío o la vida es inválida.');
+                reject('El nickname está vacío o la vida es inválida.');
         }
     });
 }
+window.addEventListener('beforeunload', function (event) {
+    // Muestra una alerta personalizada
+    const nickname = req.session.nickname;    
+    // Para mostrar una confirmación antes de salir
+    this.alert(nickname);
+});
+
