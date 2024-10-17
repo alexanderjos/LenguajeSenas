@@ -55,7 +55,7 @@ function seleccionarOpcion(index) {
         });
 
         verificar()
-        aumentoPuntaje(4,1);
+        //aumentoPuntaje(4,1);
 
     } else {
         Swal.fire({

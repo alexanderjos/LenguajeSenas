@@ -59,7 +59,7 @@
         </div>
 
         <div class="button-container-2" style="bottom: 80px; left: 40px;">
-            <a href="niveles/nivel2.html" class="btn-circular-2"></a>
+            <a href="niveles/nivel2.php" class="btn-circular-2"></a>
             <div class="stars">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>

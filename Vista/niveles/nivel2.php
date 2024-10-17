@@ -23,7 +23,8 @@
         <!-- Encabezado -->
         <div class="row p-3 mb-3 align-items-center encabezadoN2">
             <div class="col-1 text-center">
-                <a href="#" id="exitButton" class="text-white">
+
+                <a href="#" id="exitButton" class="text-white" data-user="<?php echo htmlspecialchars($_SESSION['nickname'], ENT_QUOTES, 'UTF-8'); ?>">
                     <i class="fa-sharp fa-solid fa-house casa"></i>
                 </a>
             </div>
