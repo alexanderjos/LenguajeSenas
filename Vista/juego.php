@@ -98,11 +98,11 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="/Temario/Temario1.html">Tema 1: Vocabulario Básico</a></li>
-                <li><a href="#">Tema 2: Tecnología y Redes Sociales</a></li>
+                <li><a href="/Vista/Temario/Temario1.html">Tema 1: Vocabulario Básico</a></li>
+                <!-- <li><a href="#">Tema 2: Tecnología y Redes Sociales</a></li>
                 <li><a href="#">Tema 3: Colores y números</a></li>
                 <li><a href="#">Tema 4: Naturaleza y animales</a></li>
-                <li><a href="#">Tema 5: Tiempo (meses, día, tiempo)</a></li>
+                <li><a href="#">Tema 5: Tiempo (meses, día, tiempo)</a></li> -->
             </ul>
         </nav>
     </div>
