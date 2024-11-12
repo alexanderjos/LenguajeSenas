@@ -68,7 +68,7 @@
         </div>
         
         <div class="button-container-3" style="top: 150px; left: 320px;">
-            <a href="" class="btn-circular-3"></a>
+            <a href="niveles/nivel3.php" class="btn-circular-3"></a>
             <div class="stars">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -98,7 +98,7 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="/Vista/Temario/Temario1.html">Tema 1: Vocabulario Básico</a></li>
+                <li><a href="Temario/Temario1.html">Tema 1: Vocabulario Básico</a></li>
                 <!-- <li><a href="#">Tema 2: Tecnología y Redes Sociales</a></li>
                 <li><a href="#">Tema 3: Colores y números</a></li>
                 <li><a href="#">Tema 4: Naturaleza y animales</a></li>

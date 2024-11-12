@@ -114,7 +114,7 @@ function showScoreScreen(correct, total) {
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-            location.href = "nivel2.html"
+            location.href = "nivel2.php"
         } else if (result.isDenied) {
             location.reload(); // Recarga la página actual
         }

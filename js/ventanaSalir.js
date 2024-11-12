@@ -29,7 +29,9 @@ document.getElementById('exitButton')?.addEventListener('click', function(event)
                         if (data.existe) {
                             window.location.href = '../juego.php';
                         } else {
+
                             throw new Error(data.error || 'No se actualizó ningún registro.');
+                            
                         }
                     })
                     .catch(error => console.error('Error al actualizar la vida:', error));

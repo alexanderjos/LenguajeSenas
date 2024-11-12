@@ -2,7 +2,7 @@
 session_start();
 
 // Configuración de aprendizaje (modificar 'modo' para intercambiar entre 'numeros' o 'letras')
-$modo = 'numeros'; // Opciones: 'numeros' o 'letras'
+$modo = 'letras'; // Opciones: 'numeros' o 'letras'
 
 // Definimos el contenido para cada modo
 $contenido = [
@@ -99,13 +99,13 @@ $carpeta_imagenes = $modo === 'numeros' ? 'numeros_manos/' : 'letras/';
 
     <div class="fixed-bar" id="fixed-bar">
         <div class="col-6 text-start">
-            <a id="backButton" href="nivel2.php">
+            <a id="backButton" href="nivel2.html">
                 <img src="../../Imagenes/cambiarNivel/boton_izquierda.png" alt="Regresar" style="margin: 2em; display: none;"/>
             </a>
         </div>
         <div class="col-6 text-end">
             <button id="verifyButton">VERIFICAR</button>
-            <button id="nextLevelButton" href="nivel2.php" style="display: none;">SIGUIENTE</button>
+            <button id="nextLevelButton" href="nivel2.html" style="display: none;">SIGUIENTE</button>
             <a id="retryButton" style="display: none;">
                 <img src="../../Imagenes/cambiarNivel/rotate-right.png" alt="volverIntentar"/>
             </a>
